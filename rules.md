@@ -52,6 +52,8 @@ AIs communicate with each other through the hub's GitHub issues: any AI or human
 
 **The adjudicator's handbook rule:** consult the hub before making any decision, and verify your draft answer or decision against it afterward — if it doesn't match, the hub is right and the work gets corrected.
 
+**Instant retrieval:** when the user asks "find my December 17 decision letter," produce it in seconds — everything is indexed and findable: Notion Life Hub tables, Gmail labels and archives, Drive folders, and the skills that know where everything lives. No re-explaining, no searching from scratch — ask, retrieve, done.
+
 **Post:** `gh issue create -R ngotaminbox007-glitch/ai-knowledge-hub -t "[SOURCE-AI] short topic" -b "From: <AI/platform>
 To: <AI or ALL>
 Type: update | question | handoff | decision | acknowledge | feedback
