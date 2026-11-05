@@ -150,6 +150,7 @@ footer .frow { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6
       <a href="#mission-control">Mission Control</a>
       <a href="#rules">Rules</a>
       <a href="#inventory">Inventory</a>
+      <a href="#install">Install</a>
       <a href="#downloads">Downloads</a>
     </nav>
   </div>
@@ -349,8 +350,46 @@ footer .frow { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6
       </div>
     </section>
 
+    <section id="install">
+      <h2 class="sec"><span class="sec-tag">07 — PLUG AND PLAY</span>Easy install for any AI</h2>
+
+      <div class="rule">
+        <span class="rule-num">WHAT A SKILL IS</span>
+        <h2>Plain markdown — nothing to build</h2>
+        <p>Every skill is just a folder with a <strong>SKILL.md</strong> and optional reference files. No code to compile, no dependencies, no API keys. That makes it universally compatible: any AI that can read text can use any skill here.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">METHOD 1 — DIRECT INJECTION</span>
+        <h2>Paste it in (works with everything)</h2>
+        <p>The fastest path: open the skill's SKILL.md (or the whole <a href="COMPLETE-MANUSCRIPT-FOR-AI.md">manuscript</a>), copy the text, and paste it into your AI's instructions, system prompt, or custom instructions. For Grok or Mission Control-style setups, paste <a href="grok-master-instructions.md">grok-master-instructions.md</a> into the custom instructions field. Done — the AI now behaves by these rules.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">METHOD 2 — PLUG-IN INSTALL</span>
+        <h2>Drop the folder in</h2>
+        <p>Download <a href="skill-source-package.zip">skill-source-package.zip</a>, unzip, and place the skill folder where your agent looks:<br>
+        <strong>Claude Code:</strong> ~/.claude/skills/<skill-name>/<br>
+        <strong>Cursor:</strong> the skill text into .cursor/rules or AGENTS.md<br>
+        <strong>ChatGPT / agents with Agent Skills support:</strong> upload the zip or folder to the skills directory<br>
+        <strong>Perplexity:</strong> load via the Skills marketplace, or drop the folder in a project and load_skill it</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">METHOD 3 — FULL PACKAGE</span>
+        <h2>Everything at once</h2>
+        <p>For a complete setup, follow the install manual inside <a href="COMPLETE-MANUSCRIPT-FOR-AI.md">the manuscript</a> — it walks through installing all 22 skills, the 3 automations, and the connector guides step by step, written so any AI can perform the install itself.</p>
+      </div>
+
+      <div class="rule protected">
+        <span class="rule-num">VERIFY</span>
+        <h2>Confirm the install took</h2>
+        <p>After installing, ask the AI: <em>"Recite the hard limits and the never-spam categories."</em> Correct answer: never send, submit, pay, delete, or share without explicit approval; government/VA/veterans/disability/benefits/settlement/case mail is never spam; short phone-friendly replies; last 4 digits only. If it can't recite them, the injection didn't take — re-paste and retry.</p>
+      </div>
+    </section>
+
     <section id="downloads">
-      <h2 class="sec"><span class="sec-tag">07 — DOWNLOADS</span>Machine-readable copies</h2>
+      <h2 class="sec"><span class="sec-tag">08 — DOWNLOADS</span>Machine-readable copies</h2>
       <div class="dl-grid">
         <a class="dl" href="rules.md">
           <span><span class="dl-name">rules.md</span><span class="dl-desc" style="display:block">Raw markdown of these rules — for AI ingestion</span></span>

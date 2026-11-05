@@ -8,6 +8,8 @@ This entire hub lives permanently at **https://ngotaminbox007-glitch.github.io/a
 
 **Read order for any AI:** 1) rules.md (this page) → 2) grok-master-instructions.md → 3) the skills needed, from COMPLETE-MANUSCRIPT-FOR-AI.md or skill-source-package.zip.
 
+**Install is plug and play:** skills are plain markdown folders — no build, no dependencies. Direct injection: paste the SKILL.md into any AI's instructions or system prompt. Plug-in: drop the unzipped skill folder into the agent's skills directory (Claude Code: ~/.claude/skills/, Cursor: .cursor/rules or AGENTS.md, ChatGPT: upload the zip, Perplexity: marketplace or load_skill). Full package: the install manual inside the manuscript — any AI can perform the complete install itself. Verify: ask the AI to recite the hard limits; if it can't, re-inject.
+
 **Hard limits, no exceptions:** never send, submit, pay, delete, or share anything without explicit user approval — draft until send. Government, VA, veterans, disability, benefits, settlement, and active-case mail is never spam. The user reads on a phone: short replies, answer first, one clear next step. Never expose full SSNs, account numbers, or medical details — last 4 digits only.
 
 ## How the whole organization network works

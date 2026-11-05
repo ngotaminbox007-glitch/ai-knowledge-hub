@@ -8,7 +8,17 @@
 - [grok-master-instructions.md](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/grok-master-instructions.md): Mission Control master instructions — the 7 rules that matter most, reply shape, daily brief format, office routing and handoffs.
 - [Skills-Abilities-Connections-Inventory-2026-11-04.pdf](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/Skills-Abilities-Connections-Inventory-2026-11-04.pdf): The verified inventory of all 22 custom skills, 3 automations, 14 built-in abilities, 17 connectors, and 10 projects.
 
-## Install and implement
+## Install and implement (plug and play)
+
+Skills are plain markdown folders (SKILL.md + references) — no build, no dependencies, universally compatible. Three install methods:
+
+1. Direct injection (works with every AI): paste the SKILL.md text into your instructions, system prompt, or custom instructions. For Grok/Mission Control, paste grok-master-instructions.md into custom instructions.
+2. Plug-in install: unzip skill-source-package.zip and drop the skill folder where your agent looks — Claude Code: ~/.claude/skills/<name>/; Cursor: .cursor/rules or AGENTS.md; ChatGPT/Agent Skills support: upload the zip; Perplexity: Skills marketplace or load_skill.
+3. Full package: follow the install manual inside the manuscript — any AI can perform the complete install itself.
+
+Verify after install: ask the AI to recite the hard limits and never-spam categories. If it can't, re-inject.
+
+## Downloads
 
 - [COMPLETE-MANUSCRIPT-FOR-AI.md](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/COMPLETE-MANUSCRIPT-FOR-AI.md): Every skill source in full (Rev 2, audited) plus the install manual any AI can follow.
 - [skill-source-package.zip](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/skill-source-package.zip): The installable package — skill sources, install manual, connector and plugin guides.
