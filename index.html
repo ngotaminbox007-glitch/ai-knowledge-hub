@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Rules — Email Cleanup & Spam Triage</title>
+<meta name="description" content="The permanent rules for AI assistants triaging this email account: never-spam protected categories, open-ratio spam detection, the trashcan label system, and the most-wanted sender list.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%23016663'/><path d='M7 7h10M7 12h10M7 17h6' stroke='%23f5f2ea' stroke-width='2.4' stroke-linecap='round'/></svg>">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+  --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+  --color-bg: #f7f5f0;
+  --color-surface: #fbfaf7;
+  --color-surface-offset: #efede6;
+  --color-border: #ddd9cf;
+  --color-divider: #e5e2d9;
+  --color-text: #20241f;
+  --color-text-muted: #6b6d64;
+  --color-text-faint: #a3a49a;
+  --color-primary: #016663;
+  --color-primary-hover: #014c4a;
+  --color-primary-highlight: #dde7e2;
+  --color-protected: #3d6b1e;
+  --color-protected-highlight: #e2ead6;
+  --color-danger: #96341f;
+  --color-danger-highlight: #f0ddd6;
+  --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem;
+  --font-body: 'Satoshi', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: none; text-size-adjust: none; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body {
+  min-height: 100dvh; line-height: 1.65; font-family: var(--font-body);
+  font-size: var(--text-base); color: var(--color-text); background-color: var(--color-bg);
+}
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; }
+p, li { text-wrap: pretty; }
+a { color: var(--color-primary); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--color-primary-hover); }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 var(--space-6); }
+
+/* masthead */
+.mast { border-bottom: 1px solid var(--color-border); background: var(--color-surface); }
+.mast-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-5); }
+.brand { display: flex; align-items: center; gap: var(--space-3); font-family: var(--font-mono); font-weight: 700; font-size: var(--text-sm); letter-spacing: 0.02em; }
+.brand svg { flex: none; }
+.brand a { color: var(--color-text); text-decoration: none; }
+.mast-links { display: flex; gap: var(--space-5); font-family: var(--font-mono); font-size: var(--text-xs); }
+.mast-links a { color: var(--color-text-muted); text-decoration: none; }
+.mast-links a:hover { color: var(--color-primary); }
+
+/* hero */
+.hero { padding-block: var(--space-16) var(--space-10); }
+.kicker { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--space-4); }
+h1 { font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.01em; margin-bottom: var(--space-5); }
+.lede { color: var(--color-text-muted); max-width: 58ch; }
+.notice {
+  margin-top: var(--space-8); padding: var(--space-4) var(--space-5);
+  background: var(--color-primary-highlight); border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0; font-weight: 500;
+}
+
+/* rules */
+.rule { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6); margin-bottom: var(--space-4); }
+.rule-num { font-family: var(--font-mono); font-weight: 700; font-size: var(--text-xs); color: var(--color-text-faint); display: block; margin-bottom: var(--space-2); }
+.rule h2 { font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-3); }
+.rule p { color: var(--color-text-muted); }
+.rule strong { color: var(--color-text); }
+.rule.protected h2 { color: var(--color-protected); }
+.rule.protected { border-left: 3px solid var(--color-protected); }
+.rule.spam h2 { color: var(--color-danger); }
+.rule.spam { border-left: 3px solid var(--color-danger); }
+
+section { padding-block: var(--space-10); }
+h2.sec { font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--color-divider); }
+h2.sec .sec-tag { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-faint); display: block; margin-bottom: var(--space-2); }
+
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.chip { font-family: var(--font-mono); font-size: var(--text-xs); padding: var(--space-1) var(--space-3); background: var(--color-surface-offset); border: 1px solid var(--color-border); border-radius: var(--radius-full); color: var(--color-text); }
+.chip.danger { background: var(--color-danger-highlight); border-color: transparent; color: var(--color-danger); }
+
+ol.proc { counter-reset: step; list-style: none; }
+ol.proc li { counter-increment: step; position: relative; padding-left: var(--space-10); margin-bottom: var(--space-4); color: var(--color-text-muted); }
+ol.proc li::before { content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 0.1em; font-family: var(--font-mono); font-weight: 700; font-size: var(--text-sm); color: var(--color-primary); }
+ol.proc strong { color: var(--color-text); }
+
+/* downloads */
+.dl-grid { display: grid; gap: var(--space-4); }
+.dl {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5); transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+.dl:hover { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(32,36,31,0.06); }
+.dl-name { font-weight: 700; font-size: var(--text-sm); font-family: var(--font-mono); }
+.dl-desc { color: var(--color-text-muted); font-size: var(--text-sm); margin-top: var(--space-1); }
+.dl-btn { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 500; color: var(--color-primary); white-space: nowrap; text-decoration: none; border: 1px solid var(--color-primary); border-radius: var(--radius-full); padding: var(--space-2) var(--space-4); }
+.dl-btn:hover { background: var(--color-primary); color: #fff; }
+
+footer { border-top: 1px solid var(--color-divider); margin-top: var(--space-12); padding-block: var(--space-8); color: var(--color-text-muted); font-size: var(--text-sm); }
+footer .frow { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); font-family: var(--font-mono); font-size: var(--text-xs); }
+
+@media (max-width: 640px) {
+  .mast-links { display: none; }
+  .brand { white-space: nowrap; }
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap mast-inner">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#016663"/><path d="M7 7h10M7 12h10M7 17h6" stroke="#f5f2ea" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <a href="/">AI HUB</a>
+    </div>
+    <nav class="mast-links">
+      <a href="#system">The System</a>
+      <a href="#rules">Rules</a>
+      <a href="#most-wanted">Most-Wanted</a>
+      <a href="#procedure">Procedure</a>
+      <a href="#downloads">Downloads</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="kicker">The AI Knowledge Hub — Permanent Reference</p>
+    <h1>How any AI works in this organization</h1>
+    <p class="lede">This hub documents the whole system: the brain that stores knowledge, the skills and workflows that encode how work gets done, the connections that reach your services, and the rules that govern behavior. It was built so nothing ever has to be explained twice.</p>
+    <div class="notice">Every AI assistant must read the rules before touching any email in this account — and must know how the system below works before doing any work.</div>
+  </div>
+
+  <div class="wrap">
+    <section id="system">
+      <h2 class="sec"><span class="sec-tag">00 — THE ARCHITECTURE</span>How the whole network works</h2>
+      <div class="rule">
+        <span class="rule-num">THE BRAIN</span>
+        <h2>Knowledge wiki — the project brain</h2>
+        <p>Every project has a brain: a knowledge wiki that stores durable facts, decisions, contacts, timelines, and lessons. The AI reads it before starting any work and writes new findings back into it. This is why context survives between sessions — the user teaches once, the brain remembers forever.</p>
+      </div>
+      <div class="rule">
+        <span class="rule-num">SKILLS & ABILITIES</span>
+        <h2>Installable capabilities</h2>
+        <p>Skills are packaged abilities any AI can load — step-by-step instructions for a specific kind of work. They live in the skills library (Notion: Skills, Abilities & Connections) and are installable across Perplexity, ChatGPT, Cursor, or any agent that supports the Agent Skills format. If a task matches a skill, the AI loads it instead of improvising.</p>
+      </div>
+      <div class="rule">
+        <span class="rule-num">WORKFLOWS</span>
+        <h2>Saved procedures that repeat</h2>
+        <p>Recurring work — weekly program checks, monthly records reviews, inbox triage — is stored as documented workflows in the brain, often on schedules. The AI follows the workflow instead of being re-taught, and updates it when the process improves. Efficiency compounds: every run makes the next one faster.</p>
+      </div>
+      <div class="rule">
+        <span class="rule-num">CONNECTIONS & INTEGRATIONS</span>
+        <h2>Plugins that reach your services</h2>
+        <p>Connections give the AI authenticated access to services — Gmail, Google Drive, Notion, Box, Dropbox, GitHub, Calendar, and more. With them, the AI doesn't just talk about your data; it reads, files, and organizes it directly. Each connector is a bridge between the brain and a service.</p>
+      </div>
+      <div class="rule">
+        <span class="rule-num">THE FLOW</span>
+        <h2>How a new AI gets smart instantly</h2>
+        <p>Connect → read the brain → load the skills → follow the rules → use the connections → do the work → write the results back into the brain. Every AI in the network follows the same loop, so knowledge accumulates in one place instead of living in separate conversations.</p>
+      </div>
+    </section>
+
+    <section id="rules">
+      <h2 class="sec"><span class="sec-tag">01 — THE RULES</span>The Ten Rules</h2>
+
+      <div class="rule protected">
+        <span class="rule-num">RULE 01</span>
+        <h2>Never-spam, never-delete categories — no exceptions</h2>
+        <p>Government agencies, VA and veterans benefits, disability and benefits mail, class-action and settlement claims, active case correspondence (law firm updates, medical appointment and post-op mail, travel itineraries, records-gathering services), and any sender the user consistently opens. These override every other signal — volume, labels, unread status, everything.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">RULE 02</span>
+        <h2>Read content before labeling</h2>
+        <p>Genuine correspondence can look exactly like marketing. Law firm case updates, surgery center reminders, and records-service notices have all been mislabeled as spam by volume-based sweeps. Check the sender and read the message before applying any spam label.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">RULE 03</span>
+        <h2>The open/unopened ratio is the master signal</h2>
+        <p><strong>Consistently opened</strong> (near 100% read) = important. Keep visible, never bury. <strong>Consistently unopened in bulk</strong> = spam.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">RULE 04</span>
+        <h2>Multiple labels = user-marked important</h2>
+        <p>A message carrying several of the user's own category labels (Money, Receipt, Vehicle Sale, Action Required, Needs Reply, etc.) was deliberately flagged — unless its sender's open-ratio says otherwise.</p>
+      </div>
+
+      <div class="rule spam">
+        <span class="rule-num">RULE 05</span>
+        <h2>Bulk-unopened = confirmed spam</h2>
+        <p>Roughly 20 or more emails from one sender with none or almost none opened.</p>
+      </div>
+
+      <div class="rule spam">
+        <span class="rule-num">RULE 06</span>
+        <h2>Always-spam categories</h2>
+        <p>Credit card offers, crypto promotions, loan lead-gen (rotating brand names, personal-name senders), job bait, benefit-claim scams, adult content, psychic/medium mail, payment-verification phishing, and spoofed From names.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">RULE 07</span>
+        <h2>Multiple confirmations = auto-label</h2>
+        <p>Two or more independent signals together = 90%+ spam probability. Apply the spam label without further review.</p>
+      </div>
+
+      <div class="rule protected">
+        <span class="rule-num">RULE 08</span>
+        <h2>Survival rule</h2>
+        <p>Old mail that has survived years of cleanups without deletion has proven itself important. Never delete or spam-label it.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">RULE 09</span>
+        <h2>One-time codes are dead after one use</h2>
+        <p>Verification/OTP emails get filed under a Notifications label or archived — never kept in the inbox.</p>
+      </div>
+
+      <div class="rule">
+        <span class="rule-num">RULE 10</span>
+        <h2>The trashcan label — never delete via API</h2>
+        <p>The spam label ("Likely Spam") is the trashcan. Confirmed spam is consolidated there; it equals deletion because the user can empty it with one Select-all → Delete. The agent labels and archives; <strong>only the owner deletes</strong>. Nothing is lost until the owner chooses.</p>
+      </div>
+    </section>
+
+    <section id="most-wanted">
+      <h2 class="sec"><span class="sec-tag">02 — AUTO-REJECT</span>Most-Wanted Senders</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: var(--space-6);">Any mail from these senders is confirmed spam. Label it on sight — no review needed.</p>
+      <div class="chips">
+        <span class="chip danger">finlogixconnect.com</span><span class="chip danger">indestata.com</span><span class="chip danger">installmentnexus.com</span><span class="chip danger">finrpro.com</span><span class="chip danger">lakeka-hofinance.com</span><span class="chip danger">Core Cap (info-corecapny.com@shared1.ccsend.com)</span><span class="chip danger">truecourseroute.com</span><span class="chip danger">thecreditcomet.com</span><span class="chip danger">insurancematched.com</span><span class="chip danger">phenomenalwork.net</span><span class="chip danger">joblistify.com</span><span class="chip danger">jobs2careers.com</span><span class="chip danger">mybenefits-spaoa.com</span><span class="chip danger">famehoney.online</span><span class="chip danger">lifelineapplyonline.site</span><span class="chip danger">benaughty.com</span><span class="chip danger">christin-medium.com</span><span class="chip danger">blissxo.com</span><span class="chip danger">bydfi.com</span><span class="chip danger">tradier.promo</span><span class="chip danger">referralhero.com</span><span class="chip danger">smartresourceguide.com</span><span class="chip danger">secureyourbestinsurancehere.xyz</span><span class="chip danger">informguildsyslogicpremium.xyz</span><span class="chip danger">edealerhub.com</span><span class="chip danger">alstspecials.com</span><span class="chip danger">autoipacket.com</span><span class="chip danger">dealercenter.net</span><span class="chip danger">cbdriver.com</span><span class="chip danger">callcorzo.com</span>
+      </div>
+    </section>
+
+    <section id="procedure">
+      <h2 class="sec"><span class="sec-tag">03 — OPERATING PROCEDURE</span>How to run a cleanup</h2>
+      <ol class="proc">
+        <li><strong>Discover pools by label and sender.</strong> Search returns ~100 results per query — paginate with cursors and date-partition; pools are always bigger than they look.</li>
+        <li><strong>Protect never-spam categories first.</strong> Pull VA, government, case, medical, and settlement mail out before touching anything.</li>
+        <li><strong>Score senders by open-ratio.</strong> Near-100% unopened with volume = confirmed; near-100% opened = protected.</li>
+        <li><strong>Consolidate all mail from each confirmed spam sender</strong> into the trashcan label, so one Select-all → Delete empties the pile.</li>
+        <li><strong>Re-sweep to stability.</strong> Hidden messages surface as the pile clears — repeat until a full sweep finds nothing eligible.</li>
+        <li><strong>Report:</strong> sender table with counts, what was rescued and why, and the one-tap delete instructions.</li>
+      </ol>
+    </section>
+
+    <section id="traps">
+      <h2 class="sec"><span class="sec-tag">04 — KNOWN TRAPS</span>Things that will bite you</h2>
+      <ol class="proc">
+        <li>The provider's built-in <strong>Spam folder is separate from labels</strong> and cannot be modified by API — list its contents for the user to handle. Providers auto-delete spam-folder mail after ~30 days.</li>
+        <li><strong>Mobile apps cache labels.</strong> If the user reports a removed label still showing, verify server-side before redoing work; advise a refresh or app restart.</li>
+        <li><strong>Encoded unsubscribe links</strong> in old marketing emails are often expired — use the client's built-in Unsubscribe button.</li>
+      </ol>
+    </section>
+
+    <section id="downloads">
+      <h2 class="sec"><span class="sec-tag">05 — DOWNLOADS</span>Machine-readable copies</h2>
+      <div class="dl-grid">
+        <a class="dl" href="rules.md">
+          <span><span class="dl-name">rules.md</span><span class="dl-desc" style="display:block">Raw markdown of these rules — for AI ingestion</span></span>
+          <span class="dl-btn">FETCH .MD</span>
+        </a>
+        <a class="dl" href="email-cleanup-triage-skill.zip">
+          <span><span class="dl-name">email-cleanup-triage.zip</span><span class="dl-desc" style="display:block">Installable Agent Skill — Perplexity, ChatGPT, Cursor, any agent</span></span>
+          <span class="dl-btn">DOWNLOAD .ZIP</span>
+        </a>
+        <a class="dl" href="skill.md">
+          <span><span class="dl-name">skill.md</span><span class="dl-desc" style="display:block">The skill's SKILL.md — core workflow in plain markdown</span></span>
+          <span class="dl-btn">FETCH .MD</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom: var(--space-3)">Source of truth: Notion — "AI Rules — Email Cleanup & Spam Triage" and the Skills, Abilities & Connections database. This page mirrors those records for universal access.</p>
+    <div class="frow">
+      <span>v1.0 — Nov 2026</span>
+      <span>Maintained by the account owner</span>
+      <span>For any AI: read, implement, never re-ask</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
