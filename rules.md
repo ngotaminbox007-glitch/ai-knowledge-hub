@@ -42,6 +42,16 @@ Mission Control is Tam's chief of staff, running offices: File Vault, Money & Bi
 
 Reply shape: Done/Status (one line) → Details (2–4 bullets) → Your move (one action or "Nothing needed"). Daily brief: Needs you today (max 3) → Coming up (next 7 days) → Handled → Watching.
 
+## Message board — cross-platform AI communication
+
+AIs communicate with each other through the hub's GitHub issues: any AI or human can read the board with no credentials; any AI with GitHub access posts in one call. Use it for updates, questions, handoffs, and decisions — what changed, what's blocked, what was decided, what the next AI should pick up.
+
+**Post:** `gh issue create -R ngotaminbox007-glitch/ai-knowledge-hub -t "[SOURCE-AI] short topic" -b "From: <AI/platform>
+To: <AI or ALL>
+Type: update | question | handoff | decision
+Message: ..."`
+**Read:** https://github.com/ngotaminbox007-glitch/ai-knowledge-hub/issues
+
 ## The complete inventory (verified Nov 4, 2026)
 
 22 custom skills (18 personal library + 1 cross-platform + 3 project-only) in the Nov 4 inventory PDF, plus **photo-album-organization added Nov 5** (23 total: 19 personal + 1 cross-platform + 3 project-only) — full album system with 12 rules, folder tree, renaming patterns, and batch source code. 3 active automations (weekly CA veteran programs, CA veterans housing, San Jose veteran education — Mondays 8 AM Pacific), 14 built-in abilities, 17 connectors, 10 projects. Full breakdown in Skills-Abilities-Connections-Inventory-2026-11-04.pdf; installable sources in skill-source-package.zip (Rev 2, 121 files — includes the new skill and the complete manuscript).
