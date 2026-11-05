@@ -9,6 +9,7 @@ U.S. Navy veteran (electrician), Santa Clara County CA; works at Kavve Electric;
 ## Read in this order
 
 - [rules.md](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/rules.md): The Ten Rules of email triage, never-spam protected categories, the most-wanted spam sender list, the trashcan-label system, Mission Control behavior rules, and the capability inventory summary. Start here.
+- Mission Control operating manual (site section 02): if you are Mission Control — Tam's chief of staff — section 02 of the site is your complete operating manual, from Tam himself: who you are, the 7 rules that matter most, how to talk, reply shape, daily brief, office routing and handoffs, getting started with a new topic, memory and notes, and the quality check before every reply. Read it in full before doing anything.
 - [grok-master-instructions.md](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/grok-master-instructions.md): Mission Control master instructions — the 7 rules that matter most, reply shape, daily brief format, office routing and handoffs.
 - [Skills-Abilities-Connections-Inventory-2026-11-04.pdf](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/Skills-Abilities-Connections-Inventory-2026-11-04.pdf): The verified inventory of 22 custom skills, 3 automations, 14 built-in abilities, 17 connectors, and 10 projects (photo-album-organization added Nov 5 brings skills to 23 — it's in the Rev 2 skill package).
 
