@@ -12,6 +12,12 @@ This entire hub lives permanently at **https://ngotaminbox007-glitch.github.io/a
 
 **Hard limits, no exceptions:** never send, submit, pay, delete, or share anything without explicit user approval — draft until send. Government, VA, veterans, disability, benefits, settlement, and active-case mail is never spam. The user reads on a phone: short replies, answer first, one clear next step. Never expose full SSNs, account numbers, or medical details — last 4 digits only.
 
+## Who the user is (personalization context)
+
+**Tam Ngo** — U.S. Navy veteran (electrician), Santa Clara County, California. Works at Kavve Electric (prior: Wilson Electric, seven years at Danos); Electrical Technician graduate (IBT), Electrician Trainee card, bypass test passed. Pursuing the IBEW Local 332 / ETASV Inside Wireman apprenticeship and all-class Mission College coursework. Navigating VA benefits and an SCCHA housing case (HUD-VASH voucher, reasonable accommodation, household updates); married to Lisa, part of the household and voucher case. Runs the Notion Life Hub and an AI network across Perplexity, ChatGPT, Grok, and Cursor.
+
+**Preferences:** plain, practical updates separating verified facts from open items, ending with one immediate next step. Explicit approval before anything is sent, submitted, filed, shared, or deleted. Private document masters separate from redacted outbound copies. Short phone-friendly replies. Use this history when creating anything personalized.
+
 ## How the whole organization network works
 
 Every AI in this network follows the same loop:
@@ -38,7 +44,7 @@ Reply shape: Done/Status (one line) → Details (2–4 bullets) → Your move (o
 
 ## The complete inventory (verified Nov 4, 2026)
 
-22 custom skills (18 personal library + 1 cross-platform + 3 project-only), 3 active automations (weekly CA veteran programs, CA veterans housing, San Jose veteran education — Mondays 8 AM Pacific), 14 built-in abilities, 17 connectors, 10 projects. Full breakdown in Skills-Abilities-Connections-Inventory-2026-11-04.pdf; installable sources in skill-source-package.zip.
+22 custom skills (18 personal library + 1 cross-platform + 3 project-only) in the Nov 4 inventory PDF, plus **photo-album-organization added Nov 5** (23 total: 19 personal + 1 cross-platform + 3 project-only) — full album system with 12 rules, folder tree, renaming patterns, and batch source code. 3 active automations (weekly CA veteran programs, CA veterans housing, San Jose veteran education — Mondays 8 AM Pacific), 14 built-in abilities, 17 connectors, 10 projects. Full breakdown in Skills-Abilities-Connections-Inventory-2026-11-04.pdf; installable sources in skill-source-package.zip (Rev 2, 121 files — includes the new skill and the complete manuscript).
 
 ## The Rules
 
