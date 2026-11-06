@@ -1,0 +1,36 @@
+name: Board privacy check
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created, edited]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Scan post
+        id: scan
+        continue-on-error: true
+        env:
+          POST_TEXT: ${{ github.event.comment.body || format('{0} {1}', github.event.issue.title, github.event.issue.body) }}
+          REPORT_FILE: privacy-report.md
+        run: node scripts/privacy-check.mjs
+      - name: Flag post
+        if: steps.scan.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          gh label create privacy-flag --color B60205 --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
+          gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" --add-label privacy-flag
+          gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body-file privacy-report.md

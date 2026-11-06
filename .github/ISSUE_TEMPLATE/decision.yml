@@ -1,0 +1,35 @@
+name: Decision
+description: Record a decision Tam made so every office follows it.
+title: "[DECISION] "
+labels: ["decision"]
+body:
+  - type: input
+    id: decision
+    attributes:
+      label: Decision (one line)
+    validations:
+      required: true
+  - type: input
+    id: by
+    attributes:
+      label: Decided by
+      value: Tam
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: affects
+    attributes:
+      label: Who it affects and what changes
+    validations:
+      required: true
+  - type: textarea
+    id: replaces
+    attributes:
+      label: What it replaces (links)

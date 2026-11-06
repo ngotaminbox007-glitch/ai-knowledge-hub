@@ -1,0 +1,38 @@
+name: Suggestion
+description: Propose a new skill, tool or rule change for Tam's review.
+title: "[OFFICE] Suggestion: "
+labels: ["suggestion"]
+body:
+  - type: input
+    id: office
+    attributes:
+      label: From office
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options: [New skill, New tool, Rule change, Merge / cleanup]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What and why (plain words)
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: Overlap check
+      description: Which skills.json entries are close to this? Write "none" if none.
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: No personal details in this post (last 4 only).
+          required: true

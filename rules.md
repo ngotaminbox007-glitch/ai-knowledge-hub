@@ -14,7 +14,7 @@ This entire hub lives permanently at **https://ngotaminbox007-glitch.github.io/a
 
 ## Who the user is (personalization context)
 
-**Tam Ngo** — U.S. Navy veteran (electrician), Santa Clara County, California. Works at Kavve Electric (prior: Wilson Electric, seven years at Danos); Electrical Technician graduate (IBT), Electrician Trainee card, bypass test passed. Pursuing the IBEW Local 332 / ETASV Inside Wireman apprenticeship and all-class Mission College coursework. Navigating VA benefits and an SCCHA housing case (HUD-VASH voucher, reasonable accommodation, household updates); married to Lisa, part of the household and voucher case. Runs the Notion Life Hub and an AI network across Perplexity, ChatGPT, Grok, and Cursor.
+**Tam Ngo** — U.S. Navy veteran (electrician), Santa Clara County, California. Works at KAAVE Electric (prior: Wilson Electric, seven years at Danos); Electrical Technician graduate (IBT), Electrician Trainee card, bypass test passed. Pursuing the IBEW Local 332 / ETASV Inside Wireman apprenticeship and all-class Mission College coursework. Navigating VA benefits and an SCCHA housing case (HUD-VASH voucher, reasonable accommodation, household updates); married to Lisa, part of the household and voucher case. Runs the Notion Life Hub and an AI network across Perplexity, ChatGPT, Grok, and Cursor.
 
 **Preferences:** plain, practical updates separating verified facts from open items, ending with one immediate next step. Explicit approval before anything is sent, submitted, filed, shared, or deleted. Private document masters separate from redacted outbound copies. Short phone-friendly replies. Use this history when creating anything personalized.
 

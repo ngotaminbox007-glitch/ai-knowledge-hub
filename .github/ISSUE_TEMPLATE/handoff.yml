@@ -1,0 +1,56 @@
+name: Handoff
+description: Pass one task to another office. The receiver must reply RECEIVED.
+title: "[HANDOFF] <from> -> <to>: "
+labels: ["handoff"]
+body:
+  - type: input
+    id: from
+    attributes:
+      label: From
+    validations:
+      required: true
+  - type: input
+    id: to
+    attributes:
+      label: To
+    validations:
+      required: true
+  - type: input
+    id: what
+    attributes:
+      label: What
+    validations:
+      required: true
+  - type: input
+    id: why
+    attributes:
+      label: Why
+    validations:
+      required: true
+  - type: textarea
+    id: have
+    attributes:
+      label: Have (done so far, with links)
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: Need (what the receiver must do)
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      placeholder: "YYYY-MM-DD or none"
+    validations:
+      required: true
+  - type: input
+    id: ledger
+    attributes:
+      label: Done ledger row link
+  - type: markdown
+    attributes:
+      value: |
+        **Receiver:** reply `RECEIVED` with your first step and ETA. When finished reply `DONE` with proof and close this issue.

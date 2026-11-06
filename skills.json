@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-11-05",
+  "rules": "Check this file before uploading a skill. If the name is listed, do not upload it again. New skills are added with status 'proposed' and wait for Tam's review. 'private' skills live in Notion only and never on the hub.",
+  "statuses": ["approved", "proposed", "merged", "private"],
+  "skills": [
+    { "name": "core-guardrails", "owner": "Mission Control", "version": "1.0.0", "status": "approved", "path": "skills/core-guardrails/SKILL.md", "replaces": ["draft-until-send", "phone-and-pii-hygiene", "hold-open"] },
+    { "name": "handoff", "owner": "Money & Debt", "version": "1.0.0", "status": "approved", "path": "skills/handoff/SKILL.md", "source": "issue #10" },
+    { "name": "email-cleanup-triage", "owner": "Mail & Schedule", "version": "1.0.0", "status": "approved", "path": "skill.md" },
+
+    { "name": "master-financial-reconciliation", "owner": "Money & Debt", "version": "1.0.0", "status": "approved", "source": "issue #10" },
+    { "name": "subscription-management", "owner": "Money & Debt", "version": "1.0.0", "status": "approved", "source": "issue #10" },
+    { "name": "kaave-weekly-time-ticket", "owner": "Money & Debt", "version": "1.0.0", "status": "approved", "source": "issue #10" },
+
+    { "name": "draft-until-send", "owner": "Mission Control", "status": "merged", "merged_into": "core-guardrails" },
+    { "name": "phone-and-pii-hygiene", "owner": "File Vault", "status": "merged", "merged_into": "core-guardrails" },
+    { "name": "hold-open", "owner": "File Vault", "status": "merged", "merged_into": "core-guardrails" },
+
+    { "name": "money-desk-cash-hub", "owner": "Money & Debt", "status": "private", "location": "Notion only" },
+    { "name": "master-multi-bank-audit", "owner": "Money & Debt", "status": "private", "location": "Notion only" },
+    { "name": "master-device-financing", "owner": "Money & Debt", "status": "private", "location": "Notion only" },
+
+    { "name": "daily-brief-system", "owner": "Mission Control", "status": "proposed", "source": "issue #8" },
+    { "name": "crew-keep-busy-pulse", "owner": "Mission Control", "status": "proposed", "source": "issue #8" },
+    { "name": "second-opinion", "owner": "Mission Control", "status": "proposed", "source": "issue #8" },
+    { "name": "one-shot-deadline-reminder", "owner": "Mission Control", "status": "proposed", "source": "issue #8" },
+    { "name": "freeze-and-gate-enforcer", "owner": "Mission Control", "status": "proposed", "source": "issue #8" },
+    { "name": "route-agent-work", "owner": "Mission Control", "status": "proposed", "source": "issue #8" },
+
+    { "name": "vault-ocr-pdf", "owner": "File Vault", "status": "proposed", "source": "issue #9" },
+    { "name": "vault-pii-quarantine", "owner": "File Vault", "status": "proposed", "source": "issue #9" },
+    { "name": "vault-dedupe-hash", "owner": "File Vault", "status": "proposed", "source": "issue #9" },
+    { "name": "records-manifest-sync", "owner": "File Vault", "status": "proposed", "source": "issue #9" },
+    { "name": "proof-auditor", "owner": "File Vault", "status": "proposed", "source": "issue #9" }
+  ]
+}
