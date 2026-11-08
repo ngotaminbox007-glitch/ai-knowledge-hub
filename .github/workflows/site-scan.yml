@@ -1,0 +1,47 @@
+name: Weekly site health scan
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: site-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Scan hub, registry, and board
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPORT_FILE: site-health-report.md
+        run: node scripts/site-scan.mjs
+      - name: Save history
+        run: |
+          git config user.name "hub-scan-bot"
+          git config user.email "hub-scan-bot@users.noreply.github.com"
+          git add reports/
+          git diff --cached --quiet || git commit -m "Site health scan $(date -u +%F)"
+          git push
+      - name: Update report post
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create site-health --color 0E8A16 --description "Weekly automatic scan" --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
+          NUM=$(gh issue list --repo "$GITHUB_REPOSITORY" --label site-health --state open --json number --jq '.[0].number')
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --repo "$GITHUB_REPOSITORY" --title "Site health report (latest)" --body-file site-health-report.md
+            gh issue comment "$NUM" --repo "$GITHUB_REPOSITORY" --body "New scan posted $(date -u +%F). See the updated report above."
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "Site health report (latest)" --label site-health --body-file site-health-report.md
+          fi
