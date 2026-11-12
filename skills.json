@@ -128,68 +128,90 @@
     {
       "name": "daily-brief-system",
       "owner": "Mission Control",
-      "status": "proposed",
-      "source": "issue #8"
+      "status": "approved",
+      "source": "issue #8",
+      "version": "1.0.0",
+      "path": "skills/daily-brief-system/SKILL.md"
     },
     {
       "name": "crew-keep-busy-pulse",
       "owner": "Mission Control",
-      "status": "proposed",
-      "source": "issue #8"
+      "status": "approved",
+      "source": "issue #8",
+      "version": "1.0.0",
+      "path": "skills/crew-keep-busy-pulse/SKILL.md"
     },
     {
       "name": "second-opinion",
       "owner": "Mission Control",
-      "status": "proposed",
-      "source": "issue #8"
+      "status": "approved",
+      "source": "issue #8",
+      "version": "1.0.0",
+      "path": "skills/second-opinion/SKILL.md"
     },
     {
       "name": "one-shot-deadline-reminder",
       "owner": "Mission Control",
-      "status": "proposed",
-      "source": "issue #8"
+      "status": "approved",
+      "source": "issue #8",
+      "version": "1.0.0",
+      "path": "skills/one-shot-deadline-reminder/SKILL.md"
     },
     {
       "name": "freeze-and-gate-enforcer",
       "owner": "Mission Control",
-      "status": "proposed",
-      "source": "issue #8"
+      "status": "approved",
+      "source": "issue #8",
+      "version": "1.0.0",
+      "path": "skills/freeze-and-gate-enforcer/SKILL.md"
     },
     {
       "name": "route-agent-work",
       "owner": "Mission Control",
-      "status": "proposed",
-      "source": "issue #8"
+      "status": "approved",
+      "source": "issue #8",
+      "version": "1.0.0",
+      "path": "skills/route-agent-work/SKILL.md"
     },
     {
       "name": "vault-ocr-pdf",
       "owner": "File Vault",
-      "status": "proposed",
-      "source": "issue #9"
+      "status": "approved",
+      "source": "issue #9",
+      "version": "1.0.0",
+      "path": "skills/vault-ocr-pdf/SKILL.md"
     },
     {
       "name": "vault-pii-quarantine",
       "owner": "File Vault",
-      "status": "proposed",
-      "source": "issue #9"
+      "status": "approved",
+      "source": "issue #9",
+      "version": "1.0.0",
+      "path": "skills/vault-pii-quarantine/SKILL.md"
     },
     {
       "name": "vault-dedupe-hash",
       "owner": "File Vault",
-      "status": "proposed",
-      "source": "issue #9"
+      "status": "approved",
+      "source": "issue #9",
+      "version": "1.0.0",
+      "path": "skills/vault-dedupe-hash/SKILL.md"
     },
     {
       "name": "records-manifest-sync",
       "owner": "File Vault",
-      "status": "proposed",
-      "source": "issue #9"
+      "status": "approved",
+      "source": "issue #9",
+      "version": "1.0.0",
+      "path": "skills/records-manifest-sync/SKILL.md"
     },
     {
       "name": "proof-auditor",
       "owner": "File Vault",
-      "status": "proposed",
-      "source": "issue #9"
+      "status": "approved",
+      "source": "issue #9",
+      "version": "1.0.0",
+      "path": "skills/proof-auditor/SKILL.md"
     }
   ]
 }
