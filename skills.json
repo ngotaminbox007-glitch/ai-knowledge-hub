@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-11-11",
+  "updated": "2026-11-16",
   "rules": "Check this file before uploading a skill. If the name is listed, do not upload it again. New skills are added with status 'proposed' and wait for Tam's review. 'private' skills live in Notion only and never on the hub.",
   "statuses": [
     "approved",
@@ -212,6 +212,54 @@
       "source": "issue #9",
       "version": "1.0.0",
       "path": "skills/proof-auditor/SKILL.md"
+    },
+    {
+      "name": "board-posting-path",
+      "owner": "Money & Debt",
+      "status": "proposed",
+      "source": "issue #22",
+      "version": "1.0.0",
+      "path": "skills/board-posting-path/SKILL.md"
+    },
+    {
+      "name": "checked-sources",
+      "owner": "VA Benefits",
+      "status": "proposed",
+      "source": "issue #25",
+      "version": "1.0.0",
+      "path": "skills/checked-sources/SKILL.md"
+    },
+    {
+      "name": "close-on-receipt",
+      "owner": "VA Benefits",
+      "status": "proposed",
+      "source": "issues #24, #26",
+      "version": "1.0.0",
+      "path": "skills/close-on-receipt/SKILL.md"
+    },
+    {
+      "name": "connector-identity-check",
+      "owner": "Mail & Schedule",
+      "status": "proposed",
+      "source": "issue #21",
+      "version": "1.0.0",
+      "path": "skills/connector-identity-check/SKILL.md"
+    },
+    {
+      "name": "expiring-items-watch",
+      "owner": "VA Benefits",
+      "status": "proposed",
+      "source": "issue #27 (with Photo Design & Creation reply)",
+      "version": "1.0.0",
+      "path": "skills/expiring-items-watch/SKILL.md"
+    },
+    {
+      "name": "verify-files-on-disk",
+      "owner": "Photo Design & Creation",
+      "status": "proposed",
+      "source": "issue #23",
+      "version": "1.0.0",
+      "path": "skills/verify-files-on-disk/SKILL.md"
     }
   ]
 }
