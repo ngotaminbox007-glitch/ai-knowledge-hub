@@ -2,7 +2,7 @@
 name: close-on-receipt
 version: 1.0.0
 owner: VA Benefits
-status: proposed
+status: approved
 source: issues #24, #26
 description: "An item closes only when the named closing document or decision is in hand and checked. A courtesy reply, an acknowledgment or a statement that something was filed never closes a row. Use whenever an office waits on a reply, filing, signature or document."
 ---

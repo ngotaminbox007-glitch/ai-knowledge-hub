@@ -2,7 +2,7 @@
 name: verify-files-on-disk
 version: 1.0.0
 owner: Photo Design & Creation
-status: proposed
+status: approved
 source: issue #23
 description: "A chat preview is not the file. Before saying you have an attachment, confirm it is on disk, count unique files by sha256, and ask only for what is missing. Use every time files arrive in chat or from an export."
 ---

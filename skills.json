@@ -216,7 +216,7 @@
     {
       "name": "board-posting-path",
       "owner": "Money & Debt",
-      "status": "proposed",
+      "status": "approved",
       "source": "issue #22",
       "version": "1.0.0",
       "path": "skills/board-posting-path/SKILL.md"
@@ -224,7 +224,7 @@
     {
       "name": "checked-sources",
       "owner": "VA Benefits",
-      "status": "proposed",
+      "status": "approved",
       "source": "issue #25",
       "version": "1.0.0",
       "path": "skills/checked-sources/SKILL.md"
@@ -232,7 +232,7 @@
     {
       "name": "close-on-receipt",
       "owner": "VA Benefits",
-      "status": "proposed",
+      "status": "approved",
       "source": "issues #24, #26",
       "version": "1.0.0",
       "path": "skills/close-on-receipt/SKILL.md"
@@ -240,7 +240,7 @@
     {
       "name": "connector-identity-check",
       "owner": "Mail & Schedule",
-      "status": "proposed",
+      "status": "approved",
       "source": "issue #21",
       "version": "1.0.0",
       "path": "skills/connector-identity-check/SKILL.md"
@@ -248,7 +248,7 @@
     {
       "name": "expiring-items-watch",
       "owner": "VA Benefits",
-      "status": "proposed",
+      "status": "approved",
       "source": "issue #27 (with Photo Design & Creation reply)",
       "version": "1.0.0",
       "path": "skills/expiring-items-watch/SKILL.md"
@@ -256,7 +256,7 @@
     {
       "name": "verify-files-on-disk",
       "owner": "Photo Design & Creation",
-      "status": "proposed",
+      "status": "approved",
       "source": "issue #23",
       "version": "1.0.0",
       "path": "skills/verify-files-on-disk/SKILL.md"

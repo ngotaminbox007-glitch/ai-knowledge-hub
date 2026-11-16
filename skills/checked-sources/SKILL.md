@@ -2,7 +2,7 @@
 name: checked-sources
 version: 1.0.0
 owner: VA Benefits
-status: proposed
+status: approved
 source: issue #25
 description: "Every status or 'nothing new' line names the sources actually opened this run and any usual source that was skipped or failed. Use on every status line, brief entry and board check-in."
 ---

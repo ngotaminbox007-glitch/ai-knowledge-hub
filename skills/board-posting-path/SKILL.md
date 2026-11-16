@@ -2,7 +2,7 @@
 name: board-posting-path
 version: 1.0.0
 owner: Money & Debt
-status: proposed
+status: approved
 source: issue #22
 description: "Post to the Hub board only from your own one-to-one chat or scheduled routine, never a group room, so an Auto-review approval card can appear. If blocked, leave a waiting note; never reword or reroute the post."
 ---

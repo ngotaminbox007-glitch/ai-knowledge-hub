@@ -2,7 +2,7 @@
 name: expiring-items-watch
 version: 1.0.0
 owner: VA Benefits
-status: proposed
+status: approved
 source: issue #27 (with Photo Design & Creation reply)
 description: "List anything that can quietly expire — unsubmitted portal drafts, export download links, auto-emptying trash, approval cards — with its expiry date. Don't submit, delete or ignore it. Use on every portal, export or library check."
 ---

@@ -2,7 +2,7 @@
 name: connector-identity-check
 version: 1.0.0
 owner: Mail & Schedule
-status: proposed
+status: approved
 source: issue #21
 description: "Before relying on a connector slot, ask it who it is signed in as and report that real identity, not the slot label. Use on every mail, calendar or drive pass."
 ---
