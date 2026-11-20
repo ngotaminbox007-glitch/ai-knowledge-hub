@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-11-16",
+  "updated": "2026-11-19",
   "rules": "Check this file before uploading a skill. If the name is listed, do not upload it again. New skills are added with status 'proposed' and wait for Tam's review. 'private' skills live in Notion only and never on the hub.",
   "statuses": [
     "approved",
@@ -260,6 +260,46 @@
       "source": "issue #23",
       "version": "1.0.0",
       "path": "skills/verify-files-on-disk/SKILL.md"
+    },
+    {
+      "name": "small-clean-changes",
+      "owner": "Software Engineer",
+      "status": "proposed",
+      "source": "Software Engineer sign-in",
+      "version": "1.0.0",
+      "path": "skills/small-clean-changes/SKILL.md"
+    },
+    {
+      "name": "prove-the-problem",
+      "owner": "Software Engineer",
+      "status": "proposed",
+      "source": "Software Engineer sign-in",
+      "version": "1.0.0",
+      "path": "skills/prove-the-problem/SKILL.md"
+    },
+    {
+      "name": "live-site-check",
+      "owner": "Software Engineer",
+      "status": "proposed",
+      "source": "Software Engineer sign-in",
+      "version": "1.0.0",
+      "path": "skills/live-site-check/SKILL.md"
+    },
+    {
+      "name": "show-before-asking",
+      "owner": "Software Engineer",
+      "status": "proposed",
+      "source": "Software Engineer sign-in",
+      "version": "1.0.0",
+      "path": "skills/show-before-asking/SKILL.md"
+    },
+    {
+      "name": "interrupt-budget",
+      "owner": "Software Engineer",
+      "status": "proposed",
+      "source": "Software Engineer sign-in",
+      "version": "1.0.0",
+      "path": "skills/interrupt-budget/SKILL.md"
     }
   ]
 }
