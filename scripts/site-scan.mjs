@@ -16,7 +16,8 @@ const h2 = (html.match(/<h2[\s>]/g) ?? []).length
 const ids = new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))
 const anchors = [...html.matchAll(/href="#([^"]+)"/g)].map((m) => m[1])
 const brokenAnchors = [...new Set(anchors.filter((a) => !ids.has(a)))]
-const localLinks = [...html.matchAll(/(?:href|src)="(?!https?:|#|mailto:|data:)([^"?#]+)"/g)].map((m) => m[1])
+// Require a real attribute boundary so JS snippets like data-href="' + x + '" are ignored.
+const localLinks = [...html.matchAll(/(?:^|[\s<])(?:href|src)="(?!https?:|#|mailto:|data:)([^"?#]+)"/gm)].map((m) => m[1])
 const brokenFiles = [
   ...new Set(
     localLinks.filter((p) => {
