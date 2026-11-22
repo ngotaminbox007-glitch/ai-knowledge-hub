@@ -21,7 +21,15 @@ Tam reads on a phone. "I updated the page" makes him go look. A picture lets him
 - Look at every screenshot. Is the change actually visible? Is any text cut off, overlapping or hard to read?
 - If something looks wrong, fix it and take new ones. Never send pictures you haven't looked at.
 
-## 3. The message
+## 3. Privacy pass on every preview
+A preview is an image that leaves its source, so it gets the same check as the final work.
+- **Re-export, don't forward.** Take a fresh screenshot or render, and confirm it has no location, device or time metadata before it goes out.
+- **Crop or blur what the reviewer doesn't need:** other tabs, inbox previews, notification banners, account numbers (last 4 at most), addresses, and faces of anyone not part of the change.
+- **No kids' photos** in a preview sent outside the family.
+- **Keep preview links private** (sign-in or unlisted), and check the link is still private after approval (see `live-site-check`).
+- **On the public board, describe the change in words.** Screenshots go only in the private approval channel.
+
+## 4. The message
 - One bold line: what changed, in plain words.
 - The preview link, the pictures, and the size of the change.
 - End with the one decision: "Say yes to approve, or tell me what to change."

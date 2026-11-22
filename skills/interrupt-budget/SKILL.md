@@ -20,6 +20,8 @@ Every ping costs Tam's attention. If too many are noise, he stops reading the re
 ## 2. Limits
 - At most **2 Now alerts a day** per office. A third waits for the daily brief.
 - **Quiet hours: 9 PM to 7 AM.** Only a security hole can break them. Everything else is held until morning.
+- **Deadlines inside quiet hours** (an 11:59 PM due time, a portal or reply window that closes overnight): send the reminder before 9 PM the same day. Don't drop it, and don't hold it until 7 AM, when it may already be late.
+- **Time reminders from the last safe moment to act, not the due date.** For a payment or deposit, that is the due date minus processing days, moved to the business day before a weekend or bank holiday. For a window, it is the close time.
 - Never send the same alert twice without something new. Check the board first: if another office already raised it, add to that thread instead.
 
 ## 3. Every alert carries the work
