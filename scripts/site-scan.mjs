@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process'
 import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 
 const repo = process.env.GITHUB_REPOSITORY ?? 'ngotaminbox007-glitch/ai-knowledge-hub'
@@ -51,6 +52,20 @@ const registryAgeDays = Math.floor((now - new Date(registry.updated)) / DAY)
 
 if (missingPaths.length) add('Skills', 'high', `Registry points to missing files: ${missingPaths.join(', ')}`, 'Upload the SKILL.md or fix the path')
 if (unlisted.length) add('Skills', 'high', `Skill folders not in skills.json: ${unlisted.join(', ')}`, 'Add them to the registry so bots stop re-uploading')
+const packageBehind = existsSync('skill-source-package.zip')
+  ? skills
+      .filter((k) => k.status === 'approved' && k.path?.startsWith('skills/'))
+      .filter((k) => {
+        try {
+          return !execFileSync('unzip', ['-p', 'skill-source-package.zip', `skill-source-package/${k.name}/SKILL.md`]).equals(readFileSync(k.path))
+        } catch {
+          return true
+        }
+      })
+      .map((k) => k.name)
+  : []
+
+if (packageBehind.length) add('Skills', 'medium', `Package behind registry: ${packageBehind.length} skill(s) missing or outdated in skill-source-package.zip: ${packageBehind.join(', ')}`, 'Run `node scripts/build-package.mjs` and commit the zip')
 if (approvedNoFile.length) add('Skills', 'medium', `${approvedNoFile.length} approved skill(s) have no file on the hub: ${approvedNoFile.join(', ')}`, 'Publish a SKILL.md for each, or mark them private')
 if (count('proposed') > 0) add('Skills', 'low', `${count('proposed')} skill(s) waiting in "proposed"`, 'Review and approve, merge, or decline them')
 if (registryAgeDays > 14) add('Skills', 'low', `skills.json not updated for ${registryAgeDays} days`, 'Confirm the registry is still current')
