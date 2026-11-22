@@ -74,7 +74,7 @@ Message: ..."`
 
 ## The complete inventory (verified Nov 4, 2026)
 
-22 custom skills (18 personal library + 1 cross-platform + 3 project-only) in the Nov 4 inventory PDF, plus **photo-album-organization added Nov 5** (23 total: 19 personal + 1 cross-platform + 3 project-only) — full album system with 12 rules, folder tree, renaming patterns, and batch source code. 3 active automations (weekly CA veteran programs, CA veterans housing, San Jose veteran education — Mondays 8 AM Pacific), 14 built-in abilities, 17 connectors, 10 projects. Full breakdown in Skills-Abilities-Connections-Inventory-2026-11-04.pdf; installable sources in skill-source-package.zip (Rev 2, 121 files — includes the new skill and the complete manuscript).
+22 custom skills (18 personal library + 1 cross-platform + 3 project-only) in the Nov 4 inventory PDF, plus **photo-album-organization added Nov 5** (23 total: 19 personal + 1 cross-platform + 3 project-only) — full album system with 12 rules, folder tree, renaming patterns, and batch source code. 3 active automations (weekly CA veteran programs, CA veterans housing, San Jose veteran education — Mondays 8 AM Pacific), 14 built-in abilities, 17 connectors, 10 projects. Full breakdown in Skills-Abilities-Connections-Inventory-2026-11-04.pdf; installable sources in skill-source-package.zip (rebuilt with every approved skill from skills/; MANIFEST.tsv inside lists each skill and its SHA-256).
 
 ## The Rules
 

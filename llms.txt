@@ -59,14 +59,14 @@ Skills are plain markdown folders (SKILL.md + references) — no build, no depen
 
 1. Direct injection (works with every AI): paste the SKILL.md text into your instructions, system prompt, or custom instructions. For Grok/Mission Control, paste grok-master-instructions.md into custom instructions.
 2. Plug-in install: unzip skill-source-package.zip and drop the skill folder where your agent looks — Claude Code: ~/.claude/skills/<name>/; Cursor: .cursor/rules or AGENTS.md; ChatGPT/Agent Skills support: upload the zip; Perplexity: Skills marketplace or load_skill.
-3. Full package: follow the install manual inside the manuscript — any AI can perform the complete install itself.
+3. Full package: follow the install manual inside the manuscript — any AI can perform the complete install itself. The manuscript covers the original 22 skills; skills approved since Nov 5 are in skill-source-package.zip and skills.json.
 
 Verify after install: ask the AI to recite the hard limits and never-spam categories. If it can't, re-inject.
 
 ## Downloads
 
 - [COMPLETE-MANUSCRIPT-FOR-AI.md](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/COMPLETE-MANUSCRIPT-FOR-AI.md): Every skill source in full (Rev 2, audited) plus the install manual any AI can follow.
-- [skill-source-package.zip](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/skill-source-package.zip): The installable package — skill sources, install manual, connector and plugin guides.
+- [skill-source-package.zip](https://ngotaminbox007-glitch.github.io/ai-knowledge-hub/skill-source-package.zip): The installable package — every approved skill, install manual, connector and plugin guides, and MANIFEST.tsv (name, status, version, SHA-256 per skill).
 - [email-cleanup-triage SKILL.md](https://raw.githubusercontent.com/ngotaminbox007-glitch/ai-knowledge-hub/main/skill.md): The cross-platform email triage skill in Agent Skills format (Perplexity, ChatGPT, Cursor, any agent).
 
 ## Non-negotiables (common to every document above)
