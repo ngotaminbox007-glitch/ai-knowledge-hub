@@ -1,0 +1,20 @@
+{
+  "updated": "2026-11-26",
+  "agents": [
+    {"name":"Cursor Cloud Agents","note":"","refPR":65,"fixPR":68,"hubRef":90,"hubFix":55,"hubApi":75,"prHours":0.9,"latComm":75,"hubLat":90,"latLabel":"~10-30 min","cost":1.27,"hubCost":70,"merge":0.67},
+    {"name":"GitHub Copilot cloud agent","note":"successor to Copilot Workspace (sunset May 30, 2025)","refPR":48,"fixPR":42,"hubRef":75,"hubFix":75,"hubApi":75,"prHours":13.0,"latComm":50,"hubLat":90,"latLabel":"~10-60 min (60 min cap)","cost":7.78,"hubCost":55,"merge":0.45},
+    {"name":"Cognition Devin","note":"","refPR":57,"fixPR":43,"hubRef":75,"hubFix":90,"hubApi":75,"prHours":8.91,"latComm":60,"hubLat":35,"latLabel":"~15-45 min (1-3 ACU)","cost":9.75,"hubCost":30,"merge":0.55}
+  ],
+  "sources": [
+    ["Task-level PR acceptance by agent (refactor / fix)","https://arxiv.org/html/2602.02345"],
+    ["PR merge rate and time to completion by agent","https://arxiv.org/html/2602.17084v1"],
+    ["ChatGPT AI Hub 5-task benchmark (July 2026)","https://chatgptaihub.com/the-2026-ai-coding-agent-comparison-cursor-vs-claude-code-vs-github-copilot-vs-openai-codex-vs-windsurf-vs-devin/"],
+    ["Cursor cloud agents 7-day cost log","https://www.devmoment.dev/journal/cursor-background-agents-7-day-log-2026"],
+    ["Copilot AI-credit cost per task","https://agentmarketplace.ai/blog/github-copilot-premium-requests"],
+    ["Copilot coding agent 60-minute session cap","https://github.com/orgs/community/discussions/159068"],
+    ["Devin cost per merged task","https://www.activepieces.com/blog/devin-ai-pricing-2026-plans-and-real-cost-per-task"],
+    ["Devin ACU = ~15 minutes","https://apicostcalc.com/devin-acu-cost-calculator.html"],
+    ["Copilot Workspace sunset notice","https://githubnext.com/projects/copilot-workspace"],
+    ["Devin vendor-reported 67% merge rate (not scored)","https://cognition.com/blog/devin-annual-performance-review-2025"]
+  ]
+}

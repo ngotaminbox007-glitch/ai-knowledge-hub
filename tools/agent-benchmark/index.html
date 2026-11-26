@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light dark">
+<title>Cloud Coding Agent Benchmark</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #16181d; --muted: #61666f; --line: #e2e4e8;
+    --panel: #f6f7f9; --best: #157a3c; --best-bg: #e6f4ea; --bar: #9aa1ab; --accent: #2557d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --fg: #e8eaee; --muted: #9aa0aa; --line: #262a31;
+      --panel: #171a20; --best: #4ade80; --best-bg: #10261a; --bar: #4b525d; --accent: #7aa2ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; text-wrap: balance; }
+  h2 { font-size: 1.1rem; margin: 32px 0 8px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: flex-end; padding: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 16px; }
+  .controls label { display: flex; flex-direction: column; gap: 4px; font-size: .875rem; color: var(--muted); }
+  .controls label.check { flex-direction: row; align-items: center; gap: 8px; color: var(--fg); min-height: 44px; }
+  .controls input[type=number] { width: 120px; min-height: 44px; font-size: 16px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); }
+  .controls input[type=checkbox] { width: 20px; height: 20px; accent-color: var(--accent); }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 900px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  tbody tr:last-child td { border-bottom: 0; }
+  th { background: var(--panel); padding: 0; }
+  th button { all: unset; box-sizing: border-box; display: flex; gap: 4px; align-items: center; width: 100%; min-height: 44px; padding: 8px 12px; cursor: pointer; font-weight: 600; font-size: .85rem; }
+  th button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  th button .arrow { color: var(--accent); min-width: 1ch; }
+  td.agent { font-weight: 600; min-width: 170px; }
+  .val { font-weight: 600; font-size: 1.05rem; }
+  .raw { display: block; color: var(--muted); font-size: .78rem; font-weight: 400; }
+  .bar { height: 4px; border-radius: 2px; background: var(--line); margin-top: 6px; overflow: hidden; }
+  .bar span { display: block; height: 100%; background: var(--bar); }
+  td.best .val { color: var(--best); }
+  td.best { background: var(--best-bg); }
+  td.best .bar span { background: var(--best); }
+  .error { color: #c62828; font-weight: 600; }
+  .legend { color: var(--muted); font-size: .9rem; }
+  .legend code { font-size: .85rem; color: var(--fg); }
+  .legend li, ol li { margin-bottom: 4px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cloud Coding Agent Benchmark</h1>
+  <p class="sub" id="sub">Loading data…</p>
+
+  <form class="controls" id="controls" onsubmit="return false">
+    <label class="check"><input type="checkbox" id="hub" checked> Blend ChatGPT AI Hub 5-task ratings</label>
+    <label>Dev rate $/h <input type="number" id="rate" value="100" min="0" step="5" inputmode="decimal"></label>
+    <label>Hours saved / merged task <input type="number" id="hours" value="2" min="0" step="0.5" inputmode="decimal"></label>
+    <label>Review min / PR <input type="number" id="review" value="30" min="0" step="5" inputmode="decimal"></label>
+  </form>
+
+  <div class="scroll">
+    <table>
+      <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Cloud coding agents compared on capability, latency, cost and ROI. Column headers are sort buttons.</caption>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"><tr><td colspan="9">Loading…</td></tr></tbody>
+    </table>
+  </div>
+
+  <h2>How scores work</h2>
+  <ul class="legend">
+    <li>All scores are 0-100. With the checkbox on, each score is the average of the measured value and the AI Hub rating: <code>(measured + hub) / 2</code>.</li>
+    <li><strong>Multi-file refactor / Bug-fix success</strong>: % of agent PRs merged for that task type.</li>
+    <li><strong>API integration speed</strong>: <code>100 × (1 − ln(hours to PR close / 0.5) / ln(48))</code>. 30 min scores 100, 24 h scores 0.</li>
+    <li><strong>Latency</strong>: community estimate of time to a first usable result.</li>
+    <li><strong>Cost / merged task</strong>: <code>100 × (1 − ln(cost / $0.25) / ln(100))</code>. $0.25 scores 100, $25 scores 0.</li>
+    <li><strong>Capability score</strong>: <code>0.3 × Refactor + 0.3 × Bug fix + 0.2 × API speed + 0.2 × Latency</code>.</li>
+    <li><strong>ROI multiple</strong>: <code>(hours saved × rate) / (cost + (review min / 60 × rate) / merge rate)</code>. Value created per dollar spent, including human review of PRs that never merge.</li>
+    <li><strong>ROI score</strong>: <code>min(100, ROI multiple × 25)</code>.</li>
+    <li>Green marks the best value in each column. Hub labels: ≥90 V.High, ≥75 High, ≥55 Med, ≥35 Low.</li>
+  </ul>
+
+  <h2>Sources</h2>
+  <ol id="sources"></ol>
+</main>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id)
+  const clamp = (n) => Math.max(0, Math.min(100, n))
+  const hubLabel = (v) => v >= 90 ? 'V.High' : v >= 75 ? 'High' : v >= 55 ? 'Med' : v >= 35 ? 'Low' : 'V.Low'
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+
+  const columns = [
+    { key: 'name', label: 'Agent', type: 'text' },
+    { key: 'refactor', label: 'Multi-file refactor' },
+    { key: 'fix', label: 'Bug-fix success' },
+    { key: 'api', label: 'API integration speed' },
+    { key: 'latency', label: 'Latency' },
+    { key: 'cost', label: 'Cost / merged task' },
+    { key: 'capability', label: 'Capability score' },
+    { key: 'roi', label: 'ROI multiple' },
+    { key: 'roiScore', label: 'ROI score' },
+  ]
+
+  let data = null
+  let sort = { key: 'capability', dir: -1 }
+
+  function readInputs() {
+    const num = (id, fallback) => { const v = parseFloat($(id).value); return Number.isFinite(v) && v >= 0 ? v : fallback }
+    return { hub: $('hub').checked, rate: num('rate', 0), hours: num('hours', 0), review: num('review', 0) }
+  }
+
+  function score(a, opts) {
+    const blend = (measured, hub) => clamp(opts.hub ? (clamp(measured) + hub) / 2 : clamp(measured))
+    const apiRaw = 100 * (1 - Math.log(a.prHours / 0.5) / Math.log(48))
+    const costRaw = 100 * (1 - Math.log(a.cost / 0.25) / Math.log(100))
+    const refactor = blend(a.refPR, a.hubRef)
+    const fix = blend(a.fixPR, a.hubFix)
+    const api = blend(apiRaw, a.hubApi)
+    const latency = blend(a.latComm, a.hubLat)
+    const cost = blend(costRaw, a.hubCost)
+    const capability = clamp(0.3 * refactor + 0.3 * fix + 0.2 * api + 0.2 * latency)
+    const denom = a.cost + (opts.review / 60 * opts.rate) / a.merge
+    const roi = denom > 0 ? (opts.hours * opts.rate) / denom : 0
+    const roiScore = clamp(roi * 25)
+    const hub = (v) => opts.hub ? ` · Hub ${hubLabel(v)}` : ''
+    return {
+      name: a.name, note: a.note,
+      refactor, fix, api, latency, cost, capability, roi, roiScore,
+      raw: {
+        refactor: `${a.refPR}% merged${hub(a.hubRef)}`,
+        fix: `${a.fixPR}% merged${hub(a.hubFix)}`,
+        api: `${a.prHours} h to PR close${hub(a.hubApi)}`,
+        latency: `${a.latLabel}${hub(a.hubLat)}`,
+        cost: `$${a.cost.toFixed(2)}${hub(a.hubCost)}`,
+        capability: 'weighted 30/30/20/20',
+        roi: `$${(opts.hours * opts.rate).toFixed(0)} value / $${denom.toFixed(2)} cost`,
+        roiScore: `merge ${Math.round(a.merge * 100)}%`,
+      },
+    }
+  }
+
+  function renderHead() {
+    $('head').innerHTML = columns.map((c) => {
+      const active = sort.key === c.key
+      const aria = active ? (sort.dir === 1 ? 'ascending' : 'descending') : 'none'
+      const arrow = active ? (sort.dir === 1 ? '▴' : '▾') : ''
+      return `<th scope="col" aria-sort="${aria}"><button type="button" data-key="${c.key}">${c.label}<span class="arrow" aria-hidden="true">${arrow}</span></button></th>`
+    }).join('')
+  }
+
+  function render() {
+    renderHead()
+    if (!data) return
+    const opts = readInputs()
+    const rows = data.agents.map((a) => score(a, opts))
+    const col = columns.find((c) => c.key === sort.key)
+    rows.sort((x, y) => col.type === 'text'
+      ? sort.dir * x.name.localeCompare(y.name)
+      : sort.dir * (x[sort.key] - y[sort.key]))
+
+    const best = {}
+    for (const c of columns.slice(1)) best[c.key] = Math.max(...rows.map((r) => Math.round(r[c.key] * 100)))
+
+    $('body').innerHTML = rows.map((r) => {
+      const cells = columns.slice(1).map((c) => {
+        const v = r[c.key]
+        const isBest = Math.round(v * 100) === best[c.key]
+        const shown = c.key === 'roi' ? `${v.toFixed(2)}×` : Math.round(v)
+        const width = c.key === 'roi' ? r.roiScore : v
+        return `<td class="${isBest ? 'best' : ''}"><span class="val">${shown}</span><span class="raw">${esc(r.raw[c.key])}</span><div class="bar" aria-hidden="true"><span style="width:${width.toFixed(1)}%"></span></div></td>`
+      }).join('')
+      const note = r.note ? `<span class="raw">${esc(r.note)}</span>` : ''
+      return `<tr><td class="agent">${esc(r.name)}${note}</td>${cells}</tr>`
+    }).join('')
+  }
+
+  $('head').addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-key]')
+    if (!btn) return
+    const key = btn.dataset.key
+    sort = sort.key === key ? { key, dir: -sort.dir } : { key, dir: key === 'name' ? 1 : -1 }
+    render()
+    $('head').querySelector(`button[data-key="${key}"]`).focus()
+  })
+  $('controls').addEventListener('input', render)
+  $('controls').addEventListener('change', render)
+
+  renderHead()
+  fetch('./data.json', { cache: 'no-cache' })
+    .then((res) => { if (!res.ok) throw new Error(`HTTP ${res.status}`); return res.json() })
+    .then((json) => {
+      data = json
+      $('sub').textContent = `Cursor, Copilot and Devin cloud agents scored on capability, latency, cost and ROI. Updated ${json.updated}.`
+      $('sources').innerHTML = json.sources.map(([label, url]) =>
+        `<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a></li>`).join('')
+      render()
+    })
+    .catch((err) => {
+      $('sub').textContent = 'Data could not be loaded.'
+      $('body').innerHTML = `<tr><td colspan="9" class="error">Could not load data.json (${esc(err.message)}). Serve this folder over HTTP and reload.</td></tr>`
+    })
+})()
+</script>
+</body>
+</html>
