@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-11-19",
+  "updated": "2026-11-26",
   "rules": "Check this file before uploading a skill. If the name is listed, do not upload it again. New skills are added with status 'proposed' and wait for Tam's review. 'private' skills live in Notion only and never on the hub.",
   "statuses": [
     "approved",
@@ -11,7 +11,7 @@
   "skills": [
     {
       "name": "core-guardrails",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "version": "1.0.0",
       "status": "approved",
       "path": "skills/core-guardrails/SKILL.md",
@@ -23,7 +23,7 @@
     },
     {
       "name": "handoff",
-      "owner": "Money & Debt",
+      "owner": "Penny",
       "version": "1.0.0",
       "status": "approved",
       "path": "skills/handoff/SKILL.md",
@@ -31,14 +31,14 @@
     },
     {
       "name": "email-cleanup-triage",
-      "owner": "Mail & Schedule",
+      "owner": "Scarlett",
       "version": "1.0.0",
       "status": "approved",
       "path": "skill.md"
     },
     {
       "name": "deadline-countdown",
-      "owner": "School & Work",
+      "owner": "Max",
       "version": "1.0.0",
       "status": "approved",
       "path": "skills/deadline-countdown/SKILL.md",
@@ -46,7 +46,7 @@
     },
     {
       "name": "doc-naming-handoff",
-      "owner": "File Vault",
+      "owner": "Luna",
       "version": "1.0.0",
       "status": "approved",
       "path": "skills/doc-naming-handoff/SKILL.md",
@@ -54,7 +54,7 @@
     },
     {
       "name": "quote-official-text",
-      "owner": "VA Benefits",
+      "owner": "Luna",
       "version": "1.0.0",
       "status": "approved",
       "path": "skills/quote-official-text/SKILL.md",
@@ -62,7 +62,7 @@
     },
     {
       "name": "photo-privacy-check",
-      "owner": "Photo Design & Creation",
+      "owner": "Maya",
       "version": "1.0.0",
       "status": "approved",
       "path": "skills/photo-privacy-check/SKILL.md",
@@ -70,64 +70,64 @@
     },
     {
       "name": "master-financial-reconciliation",
-      "owner": "Money & Debt",
+      "owner": "Penny",
       "version": "1.0.0",
       "status": "approved",
       "source": "issue #10"
     },
     {
       "name": "subscription-management",
-      "owner": "Money & Debt",
+      "owner": "Penny",
       "version": "1.0.0",
       "status": "approved",
       "source": "issue #10"
     },
     {
       "name": "kaave-weekly-time-ticket",
-      "owner": "Money & Debt",
+      "owner": "Max",
       "status": "private",
       "source": "issue #10",
       "location": "Notion only"
     },
     {
       "name": "draft-until-send",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "status": "merged",
       "merged_into": "core-guardrails"
     },
     {
       "name": "phone-and-pii-hygiene",
-      "owner": "File Vault",
+      "owner": "Luna",
       "status": "merged",
       "merged_into": "core-guardrails"
     },
     {
       "name": "hold-open",
-      "owner": "File Vault",
+      "owner": "Luna",
       "status": "merged",
       "merged_into": "core-guardrails"
     },
     {
       "name": "money-desk-cash-hub",
-      "owner": "Money & Debt",
+      "owner": "Penny",
       "status": "private",
       "location": "Notion only"
     },
     {
       "name": "master-multi-bank-audit",
-      "owner": "Money & Debt",
+      "owner": "Penny",
       "status": "private",
       "location": "Notion only"
     },
     {
       "name": "master-device-financing",
-      "owner": "Money & Debt",
+      "owner": "Penny",
       "status": "private",
       "location": "Notion only"
     },
     {
       "name": "daily-brief-system",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "status": "approved",
       "source": "issue #8",
       "version": "1.0.0",
@@ -135,7 +135,7 @@
     },
     {
       "name": "crew-keep-busy-pulse",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "status": "approved",
       "source": "issue #8",
       "version": "1.0.0",
@@ -143,7 +143,7 @@
     },
     {
       "name": "second-opinion",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "status": "approved",
       "source": "issue #8",
       "version": "1.0.0",
@@ -151,7 +151,7 @@
     },
     {
       "name": "one-shot-deadline-reminder",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "status": "approved",
       "source": "issue #8",
       "version": "1.0.0",
@@ -159,7 +159,7 @@
     },
     {
       "name": "freeze-and-gate-enforcer",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "status": "approved",
       "source": "issue #8",
       "version": "1.0.0",
@@ -167,7 +167,7 @@
     },
     {
       "name": "route-agent-work",
-      "owner": "Mission Control",
+      "owner": "Mission HQ",
       "status": "approved",
       "source": "issue #8",
       "version": "1.0.0",
@@ -175,7 +175,7 @@
     },
     {
       "name": "vault-ocr-pdf",
-      "owner": "File Vault",
+      "owner": "Luna",
       "status": "approved",
       "source": "issue #9",
       "version": "1.0.0",
@@ -183,7 +183,7 @@
     },
     {
       "name": "vault-pii-quarantine",
-      "owner": "File Vault",
+      "owner": "Luna",
       "status": "approved",
       "source": "issue #9",
       "version": "1.0.0",
@@ -191,7 +191,7 @@
     },
     {
       "name": "vault-dedupe-hash",
-      "owner": "File Vault",
+      "owner": "Luna",
       "status": "approved",
       "source": "issue #9",
       "version": "1.0.0",
@@ -199,7 +199,7 @@
     },
     {
       "name": "records-manifest-sync",
-      "owner": "File Vault",
+      "owner": "Luna",
       "status": "approved",
       "source": "issue #9",
       "version": "1.0.0",
@@ -207,7 +207,7 @@
     },
     {
       "name": "proof-auditor",
-      "owner": "File Vault",
+      "owner": "Luna",
       "status": "approved",
       "source": "issue #9",
       "version": "1.0.0",
@@ -215,7 +215,7 @@
     },
     {
       "name": "board-posting-path",
-      "owner": "Money & Debt",
+      "owner": "Penny",
       "status": "approved",
       "source": "issue #22",
       "version": "1.0.0",
@@ -223,7 +223,7 @@
     },
     {
       "name": "checked-sources",
-      "owner": "VA Benefits",
+      "owner": "Luna",
       "status": "approved",
       "source": "issue #25",
       "version": "1.0.0",
@@ -231,7 +231,7 @@
     },
     {
       "name": "close-on-receipt",
-      "owner": "VA Benefits",
+      "owner": "Luna",
       "status": "approved",
       "source": "issues #24, #26",
       "version": "1.0.0",
@@ -239,7 +239,7 @@
     },
     {
       "name": "connector-identity-check",
-      "owner": "Mail & Schedule",
+      "owner": "Scarlett",
       "status": "approved",
       "source": "issue #21",
       "version": "1.0.0",
@@ -247,7 +247,7 @@
     },
     {
       "name": "expiring-items-watch",
-      "owner": "VA Benefits",
+      "owner": "Luna",
       "status": "approved",
       "source": "issue #27 (with Photo Design & Creation reply)",
       "version": "1.0.0",
@@ -255,7 +255,7 @@
     },
     {
       "name": "verify-files-on-disk",
-      "owner": "Photo Design & Creation",
+      "owner": "Maya",
       "status": "approved",
       "source": "issue #23",
       "version": "1.0.0",
@@ -263,7 +263,7 @@
     },
     {
       "name": "small-clean-changes",
-      "owner": "Software Engineer",
+      "owner": "unassigned",
       "status": "proposed",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -271,7 +271,7 @@
     },
     {
       "name": "prove-the-problem",
-      "owner": "Software Engineer",
+      "owner": "unassigned",
       "status": "proposed",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -279,7 +279,7 @@
     },
     {
       "name": "live-site-check",
-      "owner": "Software Engineer",
+      "owner": "unassigned",
       "status": "proposed",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -287,7 +287,7 @@
     },
     {
       "name": "show-before-asking",
-      "owner": "Software Engineer",
+      "owner": "unassigned",
       "status": "proposed",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -295,7 +295,7 @@
     },
     {
       "name": "interrupt-budget",
-      "owner": "Software Engineer",
+      "owner": "unassigned",
       "status": "proposed",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
