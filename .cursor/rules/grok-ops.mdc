@@ -1,0 +1,9 @@
+---
+description: Rules for Cursor Cloud Agents working on Tam's AI Hub and Grok team files
+alwaysApply: true
+---
+- This repo is public. Never commit private records, personal numbers, account links, keys or passwords.
+- Grok team structure and skill rules live in grok/OPERATING-MODEL.md. Follow it.
+- Skill files in grok/skills/ must keep NAME, DESCRIPTION, INSTRUCTIONS, APPROVAL and USAGE sections. Run `python grok/check_skills.py` before opening a PR.
+- Open a PR for review; don't push straight to main, deploy, or delete files unless Tam asked for that exact change.
+- Post results on GitHub Issues with file names only.
