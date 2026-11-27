@@ -26,7 +26,7 @@
 ## Bot roles, skills and known weaknesses
 | Bot | Distinct job | Skills (new in bold) | Weakness and guardrail |
 |---|---|---|---|
-| Morgan, Chief of Staff | Task list, routines, alarms, briefs, combined cards; took over Perplexity Mission Control and Research Analyst | **market-watch-research**, **team-decision-card**, **landing-page-builder** (deploy decisions) | Owns ~10+ routines, which is the biggest usage cost. Keep schedules wide and judge each run against a material bar. |
+| Morgan, Chief of Staff | Task list, routines, alarms, briefs, combined cards; took over Perplexity Mission Control and Research Analyst | **team-decision-card**, **landing-page-builder** (deploy decisions) | Owns ~10+ routines, which is the biggest usage cost. Keep schedules wide and judge each run against a material bar. |
 | Eddie, Advisor & Sales | Shop lead and plan stress-tester | **vbp-etsy-listing-builder**, **vbp-product-research-scorer**, **vbp-etsy-ads-campaign**, **vbp-digital-product-builder**, **team-decision-card**, **market-watch-research** (weekly market read) | Can drift into building new products. Rule: promote existing products first; build only after a verified first sale or Tam asks. |
 | Maya, Creative Design & Marketing | Product files, visuals, marketing, ad drafts, landing pages | **marketing-copy-approval-card**, **meta-ads-campaign-builder**, **google-ads-campaign-builder**, **landing-page-builder**, **vbp-digital-product-builder**, **vbp-etsy-listing-builder** (photos and video), **team-decision-card** | Can't publish to Etsy from the cloud browser. One approval card per post or ad. |
 | Penny, Money Boss | Ledger, bills, deposits, profit vs. AI costs | **vbp-etsy-ads-campaign** (profit math), **team-decision-card**, document-processor | A recorded sale, a deposited payout and break-even are three separate checks. Read-only on money. |
@@ -57,7 +57,7 @@ vbp-etsy-listing-builder, vbp-product-research-scorer, vbp-digital-product-build
 Notion, GitHub, Canva, Vercel. Optional for marketing later: Buffer or Metricool (scheduling), X Ads. Already connected: mail, calendar, Drive and finance (read-only). Suggested per-tool settings: reads = Always allow; send, post, create = Needs approval; delete = Blocked.
 
 ## Perplexity changes
-Research Analyst schedules paused on Perplexity (Market sweep, Daily update, Weekly market read). Grok's Morgan runs the same 3 routines. The Perplexity teammates (Mission Control, Research Analyst) stay in place but should only be woken for one-off jobs.
+Research Analyst schedules paused on Perplexity (Market sweep, Daily update, Weekly market read). Eddie runs market-watch-research as a single routine, 'Weekly Etsy market read', on Mondays around 6:30 AM PT. Morgan no longer runs any market routines. The Perplexity teammates (Mission Control, Research Analyst) stay in place but should only be woken for one-off jobs.
 
 ## Recommended tools, connectors and software per bot (researched Nov 26, 2026)
 Free tiers first. Anything paid needs Tam's yes, and Penny logs it before it starts. Etsy blocks the cloud browser, so tools that need an Etsy login run on Tam's own device.
