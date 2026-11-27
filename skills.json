@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "rules": "Check this file before uploading a skill. If the name is listed, do not upload it again. New skills are added with status 'proposed' and wait for Tam's review. 'private' skills live in Notion only and never on the hub.",
   "statuses": [
     "approved",
@@ -300,6 +300,83 @@
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
       "path": "skills/interrupt-budget/SKILL.md"
+    },
+    {
+      "name": "google-ads-campaign-builder",
+      "owner": "Maya",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/google-ads-campaign-builder.md"
+    },
+    {
+      "name": "landing-page-builder",
+      "owner": "Maya",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/landing-page-builder.md"
+    },
+    {
+      "name": "local-332-interview-coach",
+      "owner": "Max",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/local-332-interview-coach.md"
+    },
+    {
+      "name": "market-watch-research",
+      "owner": "Morgan",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/market-watch-research.md"
+    },
+    {
+      "name": "marketing-copy-approval-card",
+      "owner": "Maya",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/marketing-copy-approval-card.md"
+    },
+    {
+      "name": "meta-ads-campaign-builder",
+      "owner": "Maya",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/meta-ads-campaign-builder.md"
+    },
+    {
+      "name": "team-decision-card",
+      "owner": "Morgan",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/team-decision-card.md"
+    },
+    {
+      "name": "vbp-digital-product-builder",
+      "owner": "Maya",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/vbp-digital-product-builder.md"
+    },
+    {
+      "name": "vbp-etsy-ads-campaign",
+      "owner": "Eddie",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/vbp-etsy-ads-campaign.md"
+    },
+    {
+      "name": "vbp-etsy-listing-builder",
+      "owner": "Eddie",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/vbp-etsy-listing-builder.md"
+    },
+    {
+      "name": "vbp-product-research-scorer",
+      "owner": "Eddie",
+      "status": "proposed",
+      "source": "Grok team",
+      "path": "grok/skills/vbp-product-research-scorer.md"
     }
   ]
 }
