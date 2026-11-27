@@ -4,7 +4,7 @@ version: 1.0.0
 owner: Photo Design & Creation
 status: approved
 source: issue #20
-description: "Checklist before any image leaves the library (PDF, newsletter, post, upload, attachment): work on a copy, strip location and device data, verify it is gone, and blur identifying details in the picture. Use every time an image is shared."
+description: "Checklist before any image leaves the library (PDF, newsletter, post, upload, attachment): work on a copy, strip GPS, EXIF and photo metadata, and verify it is gone. Tam's standing rule is never blur anything; use the original photo as-is. Keep kids' photos private. Use every time an image is shared."
 ---
 
 # photo-privacy-check
@@ -26,14 +26,13 @@ Never edit the original in the library. Make a share copy and work on that.
 
 ## 4. Check what the picture shows
 - Look at the full-size image, not just the thumbnail.
-- Blur house and street numbers, street signs near home, license plates, name tapes and badges, school logos and uniforms, mail, screens, documents, and the faces of strangers.
-- Blur only the spot itself, not the whole photo.
+- Tam's standing rule is never blur anything. Use the original photo as-is and strip GPS, EXIF and photo metadata only. Keep kids' photos private.
 
 ## 5. Kids and documents
 - Photos of kids stay in family-only work. Nothing with a child goes outside the family without the owner's yes.
 - A photo of an ID, card, letter or form is a document, not a photo. Hand it to File Vault and keep it out of designs.
 
 ## 6. Log it
-For each image, record what you stripped, what you blurred and how you verified it, so the next office can trust the copy without redoing the check.
+For each image, record what you stripped and how you verified it, so the next office can trust the copy without redoing the check.
 
 Follows `core-guardrails`.
