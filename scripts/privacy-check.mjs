@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs'
 
-const text = process.env.POST_TEXT ?? ''
+const text = (process.env.POST_TEXT ?? '').replace(/issuecomment-\d+/g, '')
 
 const patterns = [
   { name: 'SSN', re: /\b(?!000|666|9\d\d)\d{3}[- ](?!00)\d{2}[- ](?!0000)\d{4}\b/g },
