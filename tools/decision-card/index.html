@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Decision card | AI Knowledge Hub</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --frame: #f3f5f2;
+      --sheet: #fff;
+      --well: #f7f9f7;
+      --line: #e0e5df;
+      --ink: #20241f;
+      --muted: #565c53;
+      --accent: #016663;
+      --accent-wash: #eaf3ed;
+      --gap: 16px;
+      --radius: 16px;
+      --font: Satoshi, "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; background: var(--frame); color: var(--ink); font: 16px/1.52 var(--font); }
+    h1, h2, h3, p, ol, dl, dd { margin: 0; }
+    a { color: inherit; }
+    a, button, summary { -webkit-tap-highlight-color: var(--accent-wash); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .frame { width: min(100% - 32px, 1120px); margin-inline: auto; }
+    .mast { min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: var(--gap); }
+    .brand { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; font-weight: 700; text-decoration: none; }
+    .brand:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .scope, .soft { color: var(--muted); }
+    .scope, .soft, .label, .feedback { font-size: 14px; }
+    .sheet {
+      background: var(--sheet); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px; margin-bottom: 16px;
+    }
+    .head { display: flex; justify-content: space-between; align-items: start; gap: var(--gap); margin-bottom: 24px; }
+    h1 { font-size: 30px; line-height: 1.14; letter-spacing: -0.025em; }
+    .head .soft { margin-top: 6px; max-width: 50ch; }
+    .actions { flex: none; }
+    .copy {
+      display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+      padding: 0 14px; min-height: 44px; border: 1px solid var(--ink); border-radius: 8px;
+      background: var(--ink); color: white; font: 700 14px/1.2 var(--font); cursor: pointer;
+    }
+    .copy:hover { background: #363f35; }
+    .copy:active { background: #485247; }
+    .feedback { color: var(--accent); margin-top: 5px; max-width: 28ch; }
+    .main-grid {
+      /* The 16px gutter is shared with the proof row; both panels use the same outer edges. */
+      display: grid; grid-template-columns: minmax(0, 1.68fr) minmax(0, 1fr); gap: var(--gap);
+    }
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; min-width: 0; }
+    .example { background: var(--well); }
+    .label { color: var(--muted); }
+    .question { font-size: 23px; line-height: 1.23; letter-spacing: -0.016em; margin: 4px 0 5px; }
+    .answers { list-style: none; padding: 0; margin: 14px 0; }
+    .answers li { display: flex; gap: 9px; align-items: baseline; padding: 8px 10px; }
+    .answers .picked { color: var(--accent); background: var(--accent-wash); border-radius: 8px; }
+    .answers .choice { font-weight: 700; }
+    .answers .tag { margin-left: auto; font-size: 13px; font-weight: 700; }
+    .facts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px 14px; }
+    .facts div { min-width: 0; }
+    .facts dt { color: var(--muted); font-size: 13px; }
+    .facts dd { font-size: 15px; font-weight: 700; overflow-wrap: anywhere; }
+    .panel-title { font-size: 18px; line-height: 1.25; margin-bottom: 8px; }
+    .checks { list-style: none; padding: 0; }
+    .checks li { padding: 9px 0; border-top: 1px solid var(--line); }
+    .checks li:first-child { border-top: 0; padding-top: 3px; }
+    .checks li:last-child { padding-bottom: 0; }
+    .checks strong { display: block; font-size: 15px; }
+    .checks p { font-size: 14px; color: var(--muted); margin-top: 1px; }
+    .proof { margin-top: var(--gap); }
+    .states { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+    .states div { padding-left: 12px; border-left: 1px solid var(--line); }
+    .states dt { font-size: 15px; font-weight: 700; }
+    .states dd { margin-top: 2px; font-size: 14px; color: var(--muted); }
+    details { margin-top: var(--gap); }
+    summary { width: fit-content; min-height: 44px; line-height: 44px; font-weight: 700; color: var(--accent); cursor: pointer; }
+    .skill-routes { margin-top: 2px; }
+    textarea {
+      display: block; width: 100%; min-height: 15em; padding: 12px; border: 1px solid var(--line);
+      border-radius: 8px; background: var(--well); color: var(--ink);
+      font: 14px/1.55 var(--font); resize: vertical;
+    }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    @media (max-width: 840px) {
+      .main-grid { grid-template-columns: minmax(0,1fr); }
+    }
+    @media (max-width: 520px) {
+      .frame { width: calc(100% - 24px); }
+      .mast { min-height: 48px; }
+      .scope { display: none; }
+      .sheet { padding: 16px; }
+      .head { flex-direction: column; gap: 12px; margin-bottom: 16px; }
+      h1 { font-size: 24px; }
+      .question { font-size: 21px; }
+      .panel { padding: 14px; }
+      .answers .tag { margin-left: 0; }
+      .answers li { flex-wrap: wrap; column-gap: 8px; row-gap: 2px; }
+      .facts { grid-template-columns: 1fr 1fr; }
+      .states { grid-template-columns: minmax(0,1fr); gap: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mast frame">
+    <a class="brand" href="../../" aria-label="Back to AI Knowledge Hub">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect width="24" height="24" rx="6" fill="#016663"/>
+        <path d="M7 7h10M7 12h10M7 17h6" stroke="#f5f2ea" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      AI Knowledge Hub
+    </a>
+    <span class="scope">Workflow reference</span>
+  </header>
+
+  <main class="sheet frame">
+    <div class="head">
+      <div>
+        <h1>Decision card</h1>
+        <p class="soft">One decision, one owner, one next step. Keep the filled card and evidence in your private queue.</p>
+      </div>
+      <div class="actions">
+        <button type="button" class="copy" id="copy" hidden>
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <rect x="6" y="6" width="10" height="10" rx="2"/>
+            <path d="M13 6V5a1.5 1.5 0 0 0-1.5-1.5h-6A1.5 1.5 0 0 0 4 5v6A1.5 1.5 0 0 0 5.5 12.5H6"/>
+          </svg>
+          Copy blank card
+        </button>
+        <p class="feedback" id="feedback" role="status"></p>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <section class="panel example" aria-labelledby="example">
+        <p class="label">Example only</p>
+        <h2 class="question" id="example">Use a shorter help-page title?</h2>
+        <p class="soft">A shorter title would make the navigation easier to scan.</p>
+        <ol class="answers" aria-label="Example choices">
+          <li class="picked"><span class="choice">A.</span> Use “Getting started” <span class="tag">Recommended</span></li>
+          <li><span class="choice">B.</span> Keep the current title</li>
+        </ol>
+        <dl class="facts">
+          <div><dt>Owner</dt><dd>Documentation lead</dd></div>
+          <div><dt>Destination</dt><dd>Help page</dd></div>
+          <div><dt>Cost and timing</dt><dd>No cost; after approval</dd></div>
+          <div><dt>Next step</dt><dd>Ask for exact approval</dd></div>
+          <div><dt>Evidence</dt><dd>Draft title only</dd></div>
+          <div><dt>Status</dt><dd>Waiting for approval</dd></div>
+        </dl>
+      </section>
+
+      <section class="panel" aria-labelledby="before">
+        <h2 class="panel-title" id="before">Before you ask</h2>
+        <ul class="checks">
+          <li><strong>Show the exact action.</strong><p>Include the final wording or file, the destination, the cost and when it would happen.</p></li>
+          <li><strong>Make one decision easy.</strong><p>Show up to five choices, mark the one you recommend and allow a typed reply.</p></li>
+          <li><strong>Keep proof private.</strong><p>Point to the evidence in the existing private record. Copying a card does not approve or send it.</p></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="panel proof" aria-labelledby="proof">
+      <h2 class="panel-title" id="proof">Close with proof</h2>
+      <dl class="states">
+        <div><dt>Queued</dt><dd>In line for an authorized handoff. Not received yet.</dd></div>
+        <div><dt>Received</dt><dd>The intended recipient or system confirmed receipt.</dd></div>
+        <div><dt>Done (verified)</dt><dd>The agreed action has evidence of completion.</dd></div>
+      </dl>
+    </section>
+
+    <details id="template">
+      <summary>View blank card</summary>
+      <label class="sr-only" for="blank-card">Blank decision card text</label>
+      <textarea id="blank-card" readonly rows="11" spellcheck="false">Decision:
+Owner:
+Why now:
+Choices (up to five; mark one recommended; typed reply allowed):
+Exact proposed action and final wording or file:
+Destination:
+Cost and timing:
+Evidence (private pointer only):
+Status:
+Next step:
+Proof needed to close:</textarea>
+    </details>
+
+    <details>
+      <summary>Choose a skill for the task</summary>
+      <div class="panel skill-routes">
+        <p class="soft">Read the approved request first. Use the most specific skill available for each distinct part of the task. If it is unavailable, use an approved fallback or state what is blocked.</p>
+        <ul class="checks">
+          <li><strong>Claims or comparisons</strong><p>Use the research skill that fits. Record the source and date, separate observation from inference, and mark missing coverage.</p></li>
+          <li><strong>Documents or data</strong><p>Use the format-specific reader. Compare exports read-only and keep record values in the approved private system.</p></li>
+          <li><strong>Code or design</strong><p>Match the existing stack. Use the relevant design or documentation skill and verify on safe sample data.</p></li>
+          <li><strong>Actions outside the draft</strong><p>A skill is not permission. Before any upload, installation, message, schedule, purchase, or release, show the exact item, destination, and cost and wait for approval.</p></li>
+        </ul>
+      </div>
+    </details>
+  </main>
+
+  <script>
+    const copy = document.querySelector('#copy');
+    const blank = document.querySelector('#blank-card');
+    const template = document.querySelector('#template');
+    const feedback = document.querySelector('#feedback');
+    copy.hidden = false;
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(blank.value);
+        feedback.textContent = 'Blank card copied.';
+      } catch {
+        template.open = true;
+        blank.focus();
+        blank.select();
+        feedback.textContent = 'Copy isn’t available here. The blank text is selected for you.';
+      }
+    });
+  </script>
+</body>
+</html>

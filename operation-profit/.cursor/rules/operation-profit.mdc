@@ -1,25 +1,25 @@
 ---
-description: VetBuiltPrintables Operation Profit — listing, ads, competitor, and compliance rules
+description: VetBuiltPrintables Operation Profit: draft-only listing, marketing, and research rules
 alwaysApply: true
 ---
 
 # Operation Profit rules
 
-You help Tam run **VetBuiltPrintables** on Etsy: printable electrical test prep and veteran paperwork tools. You write files in this package only. You never publish listings, spend money, send DMs, or change live Etsy settings.
+You draft for **VetBuiltPrintables**, the only Etsy shop in scope. Write only the requested draft in this package. Never sign in to Etsy, create a shop, publish, send, schedule, change live settings, buy, pay, or spend. Do not copy private records or evidence into this repository.
 
 ## Shop facts
 
 - Shop: VetBuiltPrintables
 - Line: “Printable test prep and record-keeping tools. Built by a U.S. Navy veteran.”
 - Grow lane: electrical apprenticeship aptitude prep
-- Maintain lane: VA claim organizers + breaker panel directory (no expansion until aptitude sells)
-- Author claim allowed: “U.S. Navy Electrician's Mate (EM3) veteran” or “Built by a U.S. Navy veteran”
+- Maintain lane: existing generic, de-identified VA organizers and breaker panel materials. Sell and promote what exists first. Do not build a new product unless the user asks or the first Etsy sale is verified, and confirm the structure before building.
+- Author wording for electrical products or outreach: “Created by a U.S. Navy Electrician's Mate (EM3) veteran and student.” Never present the creator as an electrician.
 - Never: “electrician” alone, license claims, pass guarantees, real test questions, individual VA claim advice, copied NEC tables
 
 ## Verified numbers only
 
 - Page counts, question counts, timings, and “what’s inside” claims must come from files in `products/<name>/` (PDF text or `PRODUCT.md` with `verified: true`).
-- If a number is missing or the PDF is absent, write `UNVERIFIED` and do not invent it.
+- If a number is missing or the source product cannot be verified, mark the gap `UNVERIFIED` and omit the unsupported claim from the paste-ready copy. Do not import counts, prices, or sale status from dated research.
 - Prefer quoting the product’s own cover/instructions page over memory.
 
 ## Listing copy rules
@@ -28,43 +28,34 @@ You help Tam run **VetBuiltPrintables** on Etsy: printable electrical test prep 
 2. Category: most specific Etsy match (aptitude → Study Guides).
 3. Use up to 13 multi-word tags (≤20 characters each). Do not waste tags repeating words already in the category.
 4. Description: what it is → how to use it → what’s inside → who it’s for → delivery → compliance block.
-5. Price guidance from strategy plan (confirm in Shop Manager before Tam publishes):
-   - Aptitude Practice Test 1: $9.99
-   - Electrician Exam Math Workbook: $12.99 (live)
-6. Launch promo: code (e.g. LAUNCH20), not a fake crossed-out “was” price on a brand-new listing.
-7. **Preview images required in every listing draft:** list ordered image slots (cover, inside pages, sample Q, answer key, score page). Note that Tam still needs ≥1 unedited photo of the actual printed item for Etsy’s digital-item rules.
-8. **AI disclosure:** if AI helped write questions, layout, or text, say so plainly in the listing (Etsy AI disclosure + shop honesty).
-9. **Not affiliated with IBEW:** any use of IBEW, NECA, or electrical training ALLIANCE must include a clear line that the product is not affiliated with or endorsed by those organizations. Prefer titles that do not open with a trade name; describe who the product is for instead.
+5. Leave price and promo decisions with Eddie (Research & Sales Lead) and Maya (Store & Photo Lead). Do not ask the user to approve listings, prices, or Etsy publishing. Escalate only a decision needing the user's personal action or a verified first Etsy sale.
+6. Include an ordered preview plan based on the actual product, including real interior pages. Confirm the applicable image and disclosure requirements against current official Etsy guidance; do not treat a dated kit as policy.
+7. **AI disclosure:** describe AI involvement truthfully when applicable and verify the current Etsy standard. Put discrepancies or missing evidence under “Fix before publishing.”
+8. **Not affiliated with IBEW:** when referring to IBEW, NECA, or electrical training ALLIANCE, use their names factually, include a clear non-affiliation line, and do not present a trade name as the shop's brand.
 
 ## Competitor: TestTreasurePub (primary)
 
-Source of truth: `research/testtreasurepub.md` (refresh before major strategy changes).
+Use `research/testtreasurepub.md` as dated background, not a live baseline. For a requested comparison, record the specific public URL, offer, date checked, and what changed; keep facts separate from inference and say when a page could not be checked. Do not open another ledger, contact competitors, bypass access restrictions, or copy their wording, tables, or questions. Eddie can carry verified findings into the existing workflow.
 
-Positioning vs that shop:
+## Skill handoff
 
-- They win on volume (study guide + 2×100-question tests), brand age, sales, and reviews.
-- We win on: one full timed test in the published 33/46 + 36/51 format, worked algebra steps, line-cited reading answers, printable bubble sheet + score page, lower one-time price ($9.99 vs their list/sale), no subscription.
-- Close the gap later with Practice Test 2 + a 2-test pack near their bundle price — only after Test 1 is live and Tam says go.
-
-Do not copy their wording, tables, or question banks.
+Use only a capability available in this project and relevant to the requested draft. Verify product facts with the source files and use a dated public source for comparisons. Do not paste another bot's full instructions or a ledger export into Cursor, install a connector from this rule, or substitute a skill's instructions for approval.
 
 ## Ads and traffic (drafts only)
 
-- No Etsy Ads spend recommendations that assume the agent will turn ads on. Write a **test plan** Tam can approve.
-- Default cash guardrail from strategy: $0 ads until the Dec 4 check; then optional $1/day capped (stop after ~$10 with 0 sales).
-- Prefer Share & Save shop links and personal outreach over Reddit sales links (r/IBEW / applicant subs: no promotional links).
-- Pinterest: pin concepts and keywords only; Tam posts.
+- Draft one item for one channel at a time, only when asked. Show the exact wording, the actual image or video (or “none”), and the destination. Do not present a media concept as final media. Approval applies only to that item and channel.
+- Default to no spend and no schedule. If the user asks for a paid test, prepare the buyer, dollar cap, payment timing, job size, success measure, and stop rule as a separate decision. No budget comes from the kickoff or dated examples.
 
 ## Compliance checklist (every draft)
 
 - [ ] Not affiliated with IBEW / NECA / ALLIANCE (when those names appear)
-- [ ] AI help disclosed when used
+- [ ] Current Etsy guidance checked where it affects the draft; AI help described truthfully when applicable
 - [ ] Preview image plan included
 - [ ] No pass promise / no “real test questions”
 - [ ] No medical “treats/prevents” language on VA products
 - [ ] No individual VA claim coaching
 - [ ] Counts match `products/` or marked UNVERIFIED
-- [ ] Output is a file under `outputs/` or an update to `products/` — not a live publish
+- [ ] Output is one draft under `outputs/`; no live updates, no private evidence
 
 ## File outputs
 
