@@ -83,7 +83,7 @@
       "source": "issue #10"
     },
     {
-      "name": "kaave-weekly-time-ticket",
+      "name": "weekly-time-ticket",
       "owner": "Max",
       "status": "private",
       "source": "issue #10",
@@ -264,7 +264,7 @@
     {
       "name": "small-clean-changes",
       "owner": "unassigned",
-      "status": "proposed",
+      "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
       "path": "skills/small-clean-changes/SKILL.md"
@@ -272,7 +272,7 @@
     {
       "name": "prove-the-problem",
       "owner": "unassigned",
-      "status": "proposed",
+      "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
       "path": "skills/prove-the-problem/SKILL.md"
@@ -280,7 +280,7 @@
     {
       "name": "live-site-check",
       "owner": "unassigned",
-      "status": "proposed",
+      "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
       "path": "skills/live-site-check/SKILL.md"
@@ -288,7 +288,7 @@
     {
       "name": "show-before-asking",
       "owner": "unassigned",
-      "status": "proposed",
+      "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
       "path": "skills/show-before-asking/SKILL.md"
@@ -296,7 +296,7 @@
     {
       "name": "interrupt-budget",
       "owner": "unassigned",
-      "status": "proposed",
+      "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
       "path": "skills/interrupt-budget/SKILL.md"
