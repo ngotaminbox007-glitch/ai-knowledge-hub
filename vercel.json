@@ -1,5 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "review/hub-layout": false
+    }
+  },
   "framework": null,
   "installCommand": "",
   "buildCommand": "node scripts/build-private.mjs",

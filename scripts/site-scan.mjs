@@ -47,11 +47,16 @@ const count = (s) => skills.filter((k) => k.status === s).length
 const missingPaths = skills.filter((k) => k.path && !existsSync(k.path)).map((k) => k.name)
 const listed = new Set(skills.map((k) => k.name))
 const unlisted = existsSync('skills') ? readdirSync('skills').filter((d) => !listed.has(d)) : []
+const listedPaths = new Set(skills.map((k) => k.path))
+const unlistedGrok = existsSync('grok/skills')
+  ? readdirSync('grok/skills').filter((file) => file.endsWith('.md') && !listedPaths.has(`grok/skills/${file}`))
+  : []
 const approvedNoFile = skills.filter((k) => k.status === 'approved' && !k.path).map((k) => k.name)
 const registryAgeDays = Math.floor((now - new Date(registry.updated)) / DAY)
 
 if (missingPaths.length) add('Skills', 'high', `Registry points to missing files: ${missingPaths.join(', ')}`, 'Upload the SKILL.md or fix the path')
 if (unlisted.length) add('Skills', 'high', `Skill folders not in skills.json: ${unlisted.join(', ')}`, 'Add them to the registry so bots stop re-uploading')
+if (unlistedGrok.length) add('Skills', 'high', `Grok skill files not in skills.json: ${unlistedGrok.join(', ')}`, 'Register the existing public Grok sources')
 const packageBehind = existsSync('skill-source-package.zip')
   ? skills
       .filter((k) => k.status === 'approved' && k.path?.startsWith('skills/'))
@@ -145,6 +150,8 @@ const report = [
   `History: \`${historyFile}\` (${history.length + 1} scans).`,
 ].join('\n')
 
-writeFileSync(process.env.REPORT_FILE ?? 'site-health-report.md', report)
 writeFileSync('reports/latest.md', report)
+if (process.env.REPORT_FILE && process.env.REPORT_FILE !== 'reports/latest.md') {
+  writeFileSync(process.env.REPORT_FILE, report)
+}
 console.log(report)
