@@ -263,7 +263,7 @@
     },
     {
       "name": "small-clean-changes",
-      "owner": "unassigned",
+      "owner": "Morgan, Scarlett, Penny, Max, Luna, Eddie, Maya",
       "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -271,7 +271,7 @@
     },
     {
       "name": "prove-the-problem",
-      "owner": "unassigned",
+      "owner": "Morgan, Scarlett, Penny, Max, Luna, Eddie, Maya",
       "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -279,7 +279,7 @@
     },
     {
       "name": "live-site-check",
-      "owner": "unassigned",
+      "owner": "Maya, Morgan",
       "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -287,7 +287,7 @@
     },
     {
       "name": "show-before-asking",
-      "owner": "unassigned",
+      "owner": "Morgan, Scarlett, Penny, Max, Luna, Eddie, Maya",
       "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -295,7 +295,7 @@
     },
     {
       "name": "interrupt-budget",
-      "owner": "unassigned",
+      "owner": "Morgan, Scarlett, Penny, Max, Luna, Eddie, Maya",
       "status": "approved",
       "source": "Software Engineer sign-in",
       "version": "1.0.0",
@@ -377,6 +377,13 @@
       "status": "approved",
       "source": "Grok team",
       "path": "grok/skills/vbp-product-research-scorer.md"
+    },
+    {
+      "name": "vbp-product-research",
+      "owner": "Eddie",
+      "status": "approved",
+      "source": "Grok team",
+      "path": "grok/skills/vbp-product-research.md"
     },
     {
       "name": "agent-benchmark",
