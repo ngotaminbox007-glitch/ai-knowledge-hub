@@ -12,27 +12,27 @@
 | 7. Skills and connectors | How each job is done, and which apps the bots can reach | Grok skill library (shared by all bots), Grok Connect Apps |
 
 ## Org network
-- Chain: every bot reports status to Morgan. Morgan and Eddie report to Tam. Morgan's call wins when shop work clashes with Tam's life, work or school.
+- Chain: every bot reports status to Morgan. Morgan and Eddie report to Tam. Morgan's call wins when shop work clashes with Tam's life, work or school. Morgan tracks shop status once a day and keeps life items, routines and the approval gate.
 - LIFE lane: Scarlett (mail, calendar, intake), Penny (money), Max (work, school, Local 332), Luna (files, private vault).
-- SHOP lane: Eddie (lead: buyer, price, listing copy, sales log), Maya (designs, product files, marketing, ad drafts, web pages), Penny (costs, verified sales), Scarlett (shop mail routing), Luna (storage only, 1:1).
+- SHOP lane: Eddie (owns the shop end to end, Tam approved Nov 28, 2026), Maya (designs, product files, marketing, ad drafts, web pages), Penny (costs, verified sales), Scarlett (routes all shop mail to Eddie), Luna (storage and file checks only, 1:1). Eddie covers the workbook offer, helper jobs, and price, sale and title recommendations on one shop card. Tam decides and makes Etsy changes himself.
 - Flow:
-  1. Scarlett catches mail and dates and routes them.
+  1. Scarlett catches mail and dates and routes them. She routes all shop mail to Eddie as the single entry point, including design and listing-link mail, and Eddie passes Maya what she needs.
   2. The owner bot works in its own lane.
-  3. Finished files go to Luna and the Notion Document Catalog.
-  4. Costs, sales and ad spend go to Penny first.
+  3. Finished files go to Luna and the Notion Document Catalog. Shop files reach Luna from Eddie or Maya, for storage and file checks only.
+  4. Costs, sales and ad spend go to Penny first. Penny gets each logged sale the same day.
   5. Decisions: life items go owner -> Morgan -> one card to Tam. Shop items go Maya/Penny -> Eddie -> one shop card. Plans go Morgan proposes -> Eddie tests -> one combined card in The Bridge.
-- Groups: The Bridge = Morgan, Eddie. The Shop = Morgan, Eddie, Maya, Penny, Scarlett. Home Base = Morgan, Scarlett, Penny, Max, Luna. Private items are handled 1:1.
+- Groups: The Bridge = Morgan, Eddie. The Shop = Morgan, Eddie, Maya, Penny, Scarlett. Home Base = Morgan, Scarlett, Penny, Max, Luna. The Bench = Morgan, Eddie, Copy Humanizer, Product Idea Stress Test, Researchy and Lumi. Helpers on The Bench are draft-only and work only when assigned; they read only the public Hub plus Notion shop pages and the shop folder for their job, and get no private files. The software engineer bot reports to Morgan 1:1 and is not seated in The Bench. Private items are handled 1:1.
 
 ## Bot roles, skills and known weaknesses
 | Bot | Distinct job | Skills (new in bold) | Weakness and guardrail |
 |---|---|---|---|
 | Morgan, Chief of Staff | Task list, routines, alarms, briefs, combined cards; took over Perplexity Mission Control and Research Analyst | **team-decision-card**, **landing-page-builder** (deploy decisions) | Owns ~10+ routines, which is the biggest usage cost. Keep schedules wide and judge each run against a material bar. |
-| Eddie, Advisor & Sales | Shop lead and plan stress-tester | **vbp-etsy-listing-builder**, **vbp-product-research-scorer**, **vbp-etsy-ads-campaign**, **vbp-digital-product-builder**, **team-decision-card**, **market-watch-research** (weekly market read) | Can drift into building new products. Rule: promote existing products first; build only after a verified first sale or Tam asks. |
+| Eddie, Advisor & Sales | Owns the shop end to end (Tam approved Nov 28, 2026) and plan stress-tester | **vbp-etsy-listing-builder**, **vbp-product-research-scorer**, **vbp-etsy-ads-campaign**, **vbp-digital-product-builder**, **team-decision-card**, **market-watch-research** (weekly market read) | Can drift into building new products. Rule: promote existing products first; build only after a verified first sale or Tam asks. |
 | Maya, Creative Design & Marketing | Product files, visuals, marketing, ad drafts, landing pages | **marketing-copy-approval-card**, **meta-ads-campaign-builder**, **google-ads-campaign-builder**, **landing-page-builder**, **vbp-digital-product-builder**, **vbp-etsy-listing-builder** (photos and video), **team-decision-card** | Can't publish to Etsy from the cloud browser. One approval card per post or ad. |
-| Penny, Money Boss | Ledger, bills, deposits, profit vs. AI costs | **vbp-etsy-ads-campaign** (profit math), **team-decision-card**, document-processor | A recorded sale, a deposited payout and break-even are three separate checks. Read-only on money. |
-| Scarlett, Executive Assistant | Inbox, calendar, routing, drafts | **gmail-cleanup-rules**, **team-decision-card** | Labels only, never deletes. Must check which mailbox a slot really opens. |
-| Max, Shifts, Skills & School | KAAVE hours, Canvas, Local 332 prep, job leads | **school-assignment-reviewer**, ibew-apprentice-packet, ibew-das103-hours-ledger, **local-332-interview-coach**, **team-decision-card** | Never writes coursework. Hours come from real punches only. |
-| Luna, Drive & Dropbox Librarian | Filing, Drive/Dropbox match, private VA lane | document-processor, exact-pdf, dual-vault-index-sync, dropbox-preflight-fact-check, evidence-lane-airlock, **vbp-digital-product-builder** (file storage checks only), **team-decision-card** | Not in The Shop. Shop files reach her 1:1. Nothing private goes to rooms or the Hub. |
+| Penny, Money Boss | Ledger, bills, deposits, profit vs. AI costs | **vbp-etsy-ads-campaign** (profit math), **team-decision-card**, document-processor | A recorded sale, a deposited payout and break-even are three separate checks. Read-only on money. Eddie sends Penny each logged sale the same day so she can match it to the payout. Dollar figures stay in Penny's 1:1 with Tam. |
+| Scarlett, Executive Assistant | Inbox, calendar, routing, drafts | **gmail-cleanup-rules**, **team-decision-card** | Labels only, never deletes. Must check which mailbox a slot really opens. Reply drafts have one home: the draft lives in Notion, and the Gmail draft is made only when Tam says he's ready to send. |
+| Max, Shifts, Skills & School | KAAVE hours, Canvas, Local 332 prep, job leads | **school-assignment-reviewer**, ibew-apprentice-packet, ibew-das103-hours-ledger, weekly-time-ticket, **local-332-interview-coach**, **team-decision-card** | Never writes coursework. Hours come from real punches only. |
+| Luna, Drive & Dropbox Librarian | Filing, Drive/Dropbox match, private VA lane | document-processor, exact-pdf, dual-vault-index-sync, dropbox-preflight-fact-check, evidence-lane-airlock, **vbp-digital-product-builder** (file storage checks only), **team-decision-card** | Not in The Shop. Shop files reach her from Eddie or Maya, for storage and file checks only. Nothing private goes to rooms or the Hub. |
 
 ## Grok skills added Nov 26, 2026 (13)
 vbp-etsy-listing-builder, vbp-product-research-scorer, vbp-digital-product-builder, vbp-etsy-ads-campaign, meta-ads-campaign-builder, google-ads-campaign-builder, marketing-copy-approval-card, landing-page-builder, market-watch-research, gmail-cleanup-rules, school-assignment-reviewer, team-decision-card, local-332-interview-coach. Each one states: when to use it, steps, checks, output, approval boundary and usage rule.
