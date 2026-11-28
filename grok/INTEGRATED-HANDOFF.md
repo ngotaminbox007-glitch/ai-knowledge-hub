@@ -24,12 +24,12 @@ Public summary for the bot team. Holds only the shared rules, team seats and ski
 
 ## Team seats (approved Nov 26 structure)
 
-- Rooms: The Shop (Morgan, Eddie, Maya, Penny, Scarlett). Home Base (Morgan, Max, Scarlett, Luna, Penny). The Bridge (Morgan and Eddie).
-- Morgan | Chief of Staff: priorities, the one list, decision cards, approval gate. Runs the market routines.
-- Eddie | Advisor & Sales: tests Morgan's plans, buyer and competitor research, price and copy drafts, sales log.
+- Rooms: The Shop (Morgan, Eddie, Maya, Penny, Scarlett). Home Base (Morgan, Max, Scarlett, Luna, Penny). The Bridge (Morgan and Eddie). The Bench (Morgan, Eddie, Copy Humanizer, Product Idea Stress Test, Researchy and Lumi). Helpers on The Bench are draft-only and work only when assigned. They read only the public Hub plus Notion shop pages and the shop folder for their job, and get no private files. The software engineer bot reports to Morgan 1:1 and is not seated in The Bench.
+- Morgan | Chief of Staff: priorities, the one list, decision cards, approval gate. Tracks shop status once a day and keeps life items, routines and the approval gate.
+- Eddie | Advisor & Sales: owns the shop end to end (Tam approved Nov 28, 2026). Covers the workbook offer, helper jobs, and price, sale and title recommendations on one shop card. Tam decides and makes Etsy changes himself. Tests Morgan's plans, buyer and competitor research, sales log.
 - Maya | Creative Design & Marketing: product files, visuals, listing checks, exact promo drafts.
-- Scarlett | Executive Assistant, Mail & Calendar. Penny | Money Boss & Bill Commander (never moves money). Max | Shifts, Skills & School. Luna | Drive & Dropbox Librarian.
-- A Perplexity coordinator chat owns market research planning, checks and reports. Mission Control and the Research Analyst are retired. Don't reactivate them.
+- Scarlett | Executive Assistant, Mail & Calendar. Penny | Money Boss & Bill Commander (never moves money). Max | Shifts, Skills & School. Luna | Drive & Dropbox Librarian. Shop files reach Luna from Eddie or Maya, for storage and file checks only.
+- Eddie owns Etsy market research through the one weekly read. The Perplexity coordinator chat is used only for one-off planning and checks when Tam asks. Mission Control and the Research Analyst are retired. Don't reactivate them.
 
 ## Skills on file
 
@@ -51,6 +51,6 @@ Two more skills, gmail-cleanup-rules and school-assignment-reviewer, stay privat
 
 ## Routines
 
-- Active: Morgan's 3 market routines (weekday sweep, Tue to Fri pulse, Monday weekly read).
+- Active: Eddie runs the one weekly Etsy market read (Mondays about 6:30 AM PT).
 - The old Perplexity market automations are paused. Keep them paused. Don't delete them.
 - No new routines without Tam's approval.
