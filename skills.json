@@ -377,6 +377,17 @@
       "status": "approved",
       "source": "Grok team",
       "path": "grok/skills/vbp-product-research-scorer.md"
+    },
+    {
+      "name": "agent-benchmark",
+      "owner": "Hub",
+      "version": "1.0.0",
+      "status": "approved",
+      "path": "skills/agent-benchmark/SKILL.md",
+      "aliases": [
+        "roi-scoring"
+      ],
+      "source": "issue #73"
     }
   ]
 }
